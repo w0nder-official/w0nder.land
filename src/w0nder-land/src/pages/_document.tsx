@@ -1,4 +1,5 @@
 import { Head, Html, Main, NextScript } from 'next/document';
+import { TrackingScript } from '@/components/common/TrackingScript';
 
 export default function Document() {
   return (
@@ -18,6 +19,7 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
+        <TrackingScript />
       </body>
     </Html>
   );
