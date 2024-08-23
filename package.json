@@ -1,0 +1,32 @@
+{
+  "name": "w0nder",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "license": "MIT",
+  "workspaces": {
+    "packages": [
+      "src/w0nder-land"
+    ]
+  },
+  "scripts": {
+    "install": "husky install",
+    "@w0nder/w0nder-land": "yarn workspace @w0nder/w0nder-land",
+    "dev": "concurrently -c \"bgGreen.bold,bgMagenta.bold,bgYellow.bold,bgBlue.bold\" \"yarn:run-*\"",
+    "lint": "yarn lint-w0nder-land",
+    "lint-w0nder-land": "yarn @w0nder/w0nder-land lint && yarn @w0nder/w0nder-land ts-check",
+    "run-w0nder-land": "yarn @w0nder/w0nder-land dev",
+    "run-traefik": "cd infra/local/traefik && traefik --configFile=traefik.toml > /dev/null"
+  },
+  "lint-staged": {
+    "src/w0nder-land/**/*.{js,jsx,ts,tsx}": [
+      "yarn lint-w0nder-land"
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "8.2.2",
+    "husky": "9.1.4",
+    "lint-staged": "15.2.9"
+  },
+  "packageManager": "yarn@4.3.0"
+}

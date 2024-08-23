@@ -1,0 +1,11 @@
+webpack.config.js
+node_modules
+dist
+.next
+next.config.js
+sentry.server.config.js
+sentry.client.config.js
+devServer.js
+server.js
+prisma
+*.js

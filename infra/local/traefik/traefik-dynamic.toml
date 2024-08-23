@@ -1,0 +1,20 @@
+[http]
+
+
+[http.routers.w0nder-land]
+rule = "Host(`w0nder.work`)"
+service = "w0nder-land"
+entryPoints = ["https"]
+[http.routers.w0nder-land.tls]
+
+
+[http.services]
+[http.services.w0nder-land.loadbalancer]
+[[http.services.w0nder-land.loadbalancer.servers]]
+url = "http://localhost:3000"
+
+
+[[tls.certificates]]
+certFile = "../cert/w0nder.work+1.pem"
+keyFile = "../cert/w0nder.work+1-key.pem"
+stores = ["default"]
