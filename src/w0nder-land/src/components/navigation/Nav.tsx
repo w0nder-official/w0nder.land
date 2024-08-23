@@ -7,6 +7,9 @@ export const Nav = () => (
     </Link>
 
     <ul className="flex h-full flex-row gap-3 flex-1 justify-end">
+      <Link href="/posts" className={NavMenuWrapperStyle}>
+        <li className={NavMenuStyle}>글 목록</li>
+      </Link>
       <Link href="/about" className={NavMenuWrapperStyle}>
         <li className={NavMenuStyle}>소개</li>
       </Link>
