@@ -4,6 +4,7 @@ import { ProfilePage, WithContext } from 'schema-dts';
 import { DefaultLayout } from '@/components/layouts/DefaultLayout';
 import { Email, TwitterLink } from '@/constants/common';
 import { HeadContentMeta } from '@/components/common/HeadContentMeta';
+import { Configure } from '@/constants/configure';
 
 const Description = `개발합니다. 만듭니다. ${TwitterLink}`;
 
@@ -25,7 +26,7 @@ const AboutPage = () => (
     <HeadContentMeta
       title="소개"
       description={Description}
-      ogUrl="https://w0nder.land/images/og.png"
+      ogUrl={`${Configure.ServerUrl}/images/og.png`}
       structuredData={structuredData}
     />
     <DefaultLayout>

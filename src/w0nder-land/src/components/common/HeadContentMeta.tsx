@@ -4,6 +4,7 @@ import { useMemo } from 'react';
 import { Organization, Person, WebSite, WithContext } from 'schema-dts';
 import { TwitterLink } from '@/constants/common';
 import { beUnique } from '@/libs/utils/array';
+import { Configure } from '@/constants/configure';
 
 export type HeadContentMetaProps = {
   title: string;
@@ -16,15 +17,15 @@ export type HeadContentMetaProps = {
 
 export const HeadContentMeta = ({ title, description, ogUrl: ogUrlProps, structuredData }: HeadContentMetaProps) => {
   const router = useRouter();
-  const pageUrl = `https://w0nder.land${router.asPath ?? '/'}`;
-  const dynamicOgUrl = `https://w0nder.land/api/og/t-001?url=${encodeURIComponent(pageUrl)}`;
+  const pageUrl = `${Configure.ServerUrl}${router.asPath ?? '/'}`;
+  const dynamicOgUrl = `${Configure.ServerUrl}/api/og/t-001?url=${encodeURIComponent(pageUrl)}`;
   const ogUrl = ogUrlProps ?? dynamicOgUrl;
 
   const jsonLd = useMemo(() => {
     const author = {
       '@type': 'Person',
       name: 'w0nder',
-      url: 'https://w0nder.land/about',
+      url: `${Configure.ServerUrl}/about`,
     } as Person;
 
     const keywords = ['developer', 'programming', 'w0nder', 'w0nder.land'];
@@ -50,8 +51,8 @@ export const HeadContentMeta = ({ title, description, ogUrl: ogUrlProps, structu
         {
           '@context': 'https://schema.org',
           '@type': 'Organization',
-          url: 'https://w0nder.land',
-          logo: 'https://w0nder.land/images/og.png',
+          url: Configure.ServerUrl,
+          logo: `${Configure.ServerUrl}/images/og.png`,
           sameAs: [TwitterLink],
         } satisfies WithContext<Organization>,
       ]),
