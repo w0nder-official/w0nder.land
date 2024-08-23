@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://w0nder.land/sitemap.xml
