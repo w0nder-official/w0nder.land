@@ -2,7 +2,6 @@ import { useMemo } from 'react';
 import { DateTime } from 'luxon';
 import { getAllPosts, Post } from '@/repository/posts';
 import { HeadContentMeta } from '@/components/common/HeadContentMeta';
-import Image from 'next/image';
 import Link from 'next/link';
 import { GetStaticProps } from 'next';
 import { ellipsis } from '@/libs/utils/string';
@@ -29,16 +28,6 @@ const PostsPage = ({ posts }: PostsProps) => {
                 <div className="flex flex-col gap-1">
                   <span className={PostDateStyle}>{DateTime.fromISO(post.createdAt).toFormat('yyyy.MM.dd')}</span>
                   <span className="block">{post.title}</span>
-                </div>
-                <div className="flex flex-row gap-2 justify-end items-center w-40">
-                  <Image
-                    alt="profile_image"
-                    src={post.authorProfile}
-                    width="24"
-                    height="24"
-                    className="rounded-full border border-slate-200"
-                  />
-                  <span className="text-gray-900 text-sm">{post.author}</span>
                 </div>
               </li>
             </Link>
