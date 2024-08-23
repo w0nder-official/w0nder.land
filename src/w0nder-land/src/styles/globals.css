@@ -1,33 +1,141 @@
+@import 'remixicon/fonts/remixicon.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Basic editor styles */
+.tiptap > * + * {
+  margin-top: 0.75em;
+}
+
+.tiptap.ProseMirror {
+  height: 100%;
+  outline: none;
+  text-align: justify;
+  white-space: normal;
+  word-break: break-all;
+}
+
+.tiptap ul {
+  padding: 0 2rem;
+  list-style-type: disc;
+}
+
+.tiptap ol {
+  padding: 0 2rem;
+  list-style-type: decimal;
+}
+
+.tiptap p {
+  line-height: 1.7;
+  font-size: 1.2rem;
+}
+
+.tiptap h1 {
+  line-height: 2;
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.tiptap h2 {
+  line-height: 2;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.tiptap h3 {
+  line-height: 2;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.tiptap h4 {
+  line-height: 2;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.tiptap h5 {
+  line-height: 2;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.tiptap h6 {
+  line-height: 2;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.tiptap code {
+  background-color: rgba(37, 37, 37, 0.1);
+  color: #414161;
+  padding: 0 5px;
+}
+
+.tiptap pre {
+  background: #0d0d0d;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-family: "JetBrainsMono", monospace;
+  padding: 0.75rem 1rem;
+}
+
+.tiptap pre code {
+  background: none;
+  color: inherit;
+  font-size: 0.8rem;
+  padding: 0;
+}
+
+.tiptap mark {
+  background-color: #faf594;
+}
+
+.tiptap img {
+  height: auto;
+  max-width: 100%;
+}
+
+.tiptap hr {
+  margin: 1rem 0;
+}
+
+.tiptap blockquote {
+  border-left: 2px solid rgba(13, 13, 13, 0.1);
+  padding-left: 1rem;
+}
+
+.tiptap hr {
+  border: none;
+  border-top: 2px solid rgba(13, 13, 13, 0.1);
+  margin: 2rem 0;
+}
+
+.tiptap ul[data-type="taskList"] {
+  list-style: none;
+  padding: 0;
+}
+
+.tiptap ul[data-type="taskList"] li {
+  align-items: center;
+  display: flex;
+}
+
+.tiptap ul[data-type="taskList"] li > label {
+  flex: 0 0 auto;
+  margin-right: 0.5rem;
+  user-select: none;
+}
+
+.tiptap ul[data-type="taskList"] li > div {
+  flex: 1 1 auto;
 }
