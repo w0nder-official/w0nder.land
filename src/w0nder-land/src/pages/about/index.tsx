@@ -26,7 +26,7 @@ const AboutPage = () => (
     <HeadContentMeta
       title="소개"
       description={Description}
-      ogUrl={`${Configure.ServerUrl}/images/og.png`}
+      ogUrl={`${Configure.ServiceUrl}/images/og.png`}
       structuredData={structuredData}
     />
     <DefaultLayout>

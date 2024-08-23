@@ -26,7 +26,7 @@ interface MarkdownPost extends BasePost {
 
 export type Post = MarkdownPost;
 
-const postsDirectory = join(process.cwd(), 'src', 'posts');
+const postsDirectory = join(process.cwd(), 'public', 'posts');
 
 export function getPostUuids() {
   return fs.readdirSync(postsDirectory).filter(uuid => {

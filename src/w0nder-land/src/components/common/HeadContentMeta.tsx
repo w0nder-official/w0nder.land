@@ -17,15 +17,16 @@ export type HeadContentMetaProps = {
 
 export const HeadContentMeta = ({ title, description, ogUrl: ogUrlProps, structuredData }: HeadContentMetaProps) => {
   const router = useRouter();
-  const pageUrl = `${Configure.ServerUrl}${router.asPath ?? '/'}`;
-  const dynamicOgUrl = `${Configure.ServerUrl}/api/og/t-001?url=${encodeURIComponent(pageUrl)}`;
+  const pageUrl = `${Configure.ServiceUrl}${router.asPath ?? '/'}`;
+  const dynamicOgUrl = `${Configure.ServiceUrl}/api/og/t-001?url=${encodeURIComponent(pageUrl)}`;
   const ogUrl = ogUrlProps ?? dynamicOgUrl;
+  const titleWithSite = `${title} | w0nder.land`;
 
   const jsonLd = useMemo(() => {
     const author = {
       '@type': 'Person',
       name: 'w0nder',
-      url: `${Configure.ServerUrl}/about`,
+      url: `${Configure.ServiceUrl}/about`,
     } as Person;
 
     const keywords = ['developer', 'programming', 'w0nder', 'w0nder.land'];
@@ -51,8 +52,8 @@ export const HeadContentMeta = ({ title, description, ogUrl: ogUrlProps, structu
         {
           '@context': 'https://schema.org',
           '@type': 'Organization',
-          url: Configure.ServerUrl,
-          logo: `${Configure.ServerUrl}/images/og.png`,
+          url: Configure.ServiceUrl,
+          logo: `${Configure.ServiceUrl}/images/og.png`,
           sameAs: [TwitterLink],
         } satisfies WithContext<Organization>,
       ]),
@@ -61,14 +62,14 @@ export const HeadContentMeta = ({ title, description, ogUrl: ogUrlProps, structu
 
   return (
     <Head>
-      <title>{`${title} | w0nder.land`}</title>
+      <title>{titleWithSite}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content="programmer, developer, w0nder, w0nder.land, 개발자" />
       <meta name="author" content="w0nder" />
       <meta name="robots" content="ALL" />
 
       <meta property="og:type" content="website" />
-      <meta property="og:title" content={title} />
+      <meta property="og:title" content={titleWithSite} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={pageUrl} />
       <meta property="og:image" content={ogUrl} />
@@ -79,7 +80,7 @@ export const HeadContentMeta = ({ title, description, ogUrl: ogUrlProps, structu
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@w0nder_offcial" />
-      <meta property="twitter:title" content={title} />
+      <meta property="twitter:title" content={titleWithSite} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogUrl} />
 

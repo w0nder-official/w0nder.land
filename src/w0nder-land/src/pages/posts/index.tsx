@@ -18,7 +18,7 @@ const PostsPage = ({ posts }: PostsProps) => {
 
   return (
     <>
-      <HeadContentMeta title="글 목록" description={description} ogUrl={`${Configure.ServerUrl}/images/og.png`} />
+      <HeadContentMeta title="글 목록" description={description} ogUrl={`${Configure.ServiceUrl}/images/og.png`} />
 
       <DefaultLayout>
         <ul>

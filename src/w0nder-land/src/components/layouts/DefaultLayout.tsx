@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { Nav } from '@/components/navigation/Nav';
+import Link from 'next/link';
 
 export const DefaultLayout = ({ fullHeight, children }: { fullHeight?: boolean; children: ReactNode }) => (
   <div className={fullHeight ? FullHeightWrapperStyle : WrapperStyle}>
@@ -10,7 +11,10 @@ export const DefaultLayout = ({ fullHeight, children }: { fullHeight?: boolean; 
     <main className="w-full max-w-3xl px-2 h-full">{children}</main>
 
     <footer className="w-full max-w-3xl mx-2 p-2 my-10">
-      <span className="p-2">@2024, w0nder</span>
+      <span className="py-2">@2024, w0nder</span>
+      <Link href="/rss.xml" target="_blank">
+        RSS
+      </Link>
     </footer>
   </div>
 );

@@ -35,7 +35,7 @@ const PostPage = ({ post }: PostProps) => {
             headline: title,
             name: title,
             wordCount: text.length,
-            keywords: ['developer', 'programming', 'fi-workers', 'fi-workers'],
+            keywords: ['developer', 'programming', 'w0nder', 'w0nder.land'],
             description,
             dateCreated: DateTime.fromISO(post.createdAt).startOf('second').toISO() ?? undefined,
             dateModified: DateTime.fromISO(post.updatedAt).startOf('second').toISO() ?? undefined,
@@ -48,8 +48,8 @@ const PostPage = ({ post }: PostProps) => {
     try {
       if (
         (await ShareService.share({
-          title: post?.title ?? 'fi-workers',
-          url: `${Configure.ServerUrl}${post?.shortUrl ?? post?.url ?? ''}`,
+          title: post?.title ?? 'w0nder.land',
+          url: `${Configure.ServiceUrl}${post?.shortUrl ?? post?.url ?? ''}`,
         })) === ShareTarget.Copy
       ) {
         alert('링크를 복사했습니다.');
@@ -78,7 +78,7 @@ const PostPage = ({ post }: PostProps) => {
   return (
     <DefaultLayout>
       <HeadContentMeta title={title} description={description} structuredData={structuredData} />
-      <article className="flex flex-col gap-6">
+      <article className="flex flex-col gap-6 px-2">
         <header>
           <h1 className={PostTitleStyle}>{post.title}</h1>
           <div className="flex flex-row justify-between items-center my-4 text-base">
