@@ -6,6 +6,7 @@ import { LinkPreview } from '@/components/editor/extensions/LinkPreview';
 import Link from '@tiptap/extension-link';
 import { Markdown } from 'tiptap-markdown';
 import { Video } from '@/components/editor/extensions/Video';
+import { Twitter } from '@/components/editor/extensions/Twitter';
 
 export type EditorProps = {
   content: JSONContent | string;
@@ -212,6 +213,7 @@ export const Editor = ({ content, editable, onChange }: EditorProps) => {
       ImageNode,
       LinkPreview,
       Video,
+      Twitter,
       Link.configure({
         HTMLAttributes: {
           class: 'underline text-emerald-600',
