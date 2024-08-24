@@ -5,6 +5,7 @@ import { DefaultLayout } from '@/components/layouts/DefaultLayout';
 import { Email, GithubLink, TwitterLink } from '@/constants/common';
 import { HeadContentMeta } from '@/components/common/HeadContentMeta';
 import { Configure } from '@/constants/configure';
+import { TwitterFollowButton } from 'react-twitter-embed';
 
 const BinaryBookClubUrl = '/binary-book-club';
 const Description = `개발합니다. 만듭니다. ${TwitterLink}`;
@@ -60,7 +61,7 @@ const AboutPage = () => (
                 <i className="ri-twitter-line" />
                 &nbsp;Twitter
               </span>
-              <span>{TwitterLink}</span>
+              <TwitterFollowButton options={{ size: 'large' }} placeholder="Loading" screenName="w0nder_official" />
             </li>
           </Link>
           <Link href={GithubLink} target="_blank">
