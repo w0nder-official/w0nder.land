@@ -21,11 +21,11 @@ const PostsPage = ({ posts }: PostsProps) => {
       <HeadContentMeta title="글 목록" description={description} ogUrl={`${Configure.ServiceUrl}/images/og.png`} />
 
       <DefaultLayout>
-        <ul className="px-4">
+        <ul className="px-2">
           {posts.map(post => (
             <Link key={post.uuid} href={post.url}>
               <li className="text-base py-4 border-b flex justify-between items-center gap-1.5 hover:border-b-fuchsia-500">
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-1 px-2">
                   <span className="flex-shrink-0 font-normal text-gray-400 text-sm">
                     {DateTime.fromISO(post.createdAt).toFormat('yyyy.MM.dd')}
                   </span>
