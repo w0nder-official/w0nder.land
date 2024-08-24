@@ -66,7 +66,7 @@ const PostPage = ({ post }: PostProps) => {
   if (!post) {
     return (
       <DefaultLayout>
-        <article className="flex flex-col gap-6">
+        <article className="flex flex-col gap-6 px-4">
           <header>
             <h1 className={PostTitleStyle}>글이 없어요.</h1>
           </header>
@@ -78,7 +78,7 @@ const PostPage = ({ post }: PostProps) => {
   return (
     <DefaultLayout>
       <HeadContentMeta title={title} description={description} structuredData={structuredData} />
-      <article className="flex flex-col gap-6 px-2">
+      <article className="flex flex-col gap-6 px-4">
         <header>
           <h1 className={PostTitleStyle}>{post.title}</h1>
           <div className="flex flex-row justify-between items-center my-4 text-base">

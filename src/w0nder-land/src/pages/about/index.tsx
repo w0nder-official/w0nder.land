@@ -6,6 +6,7 @@ import { Email, TwitterLink } from '@/constants/common';
 import { HeadContentMeta } from '@/components/common/HeadContentMeta';
 import { Configure } from '@/constants/configure';
 
+const BinaryBookClubUrl = '/binary-book-club';
 const Description = `개발합니다. 만듭니다. ${TwitterLink}`;
 
 const structuredData: WithContext<ProfilePage> = {
@@ -30,32 +31,48 @@ const AboutPage = () => (
       structuredData={structuredData}
     />
     <DefaultLayout>
-      <Image
-        alt="profile_image"
-        src="/images/profile_image.jpg"
-        width="250"
-        height="250"
-        className="rounded-full border-2 border-fuchsia-500"
-      />
-      <div className="py-10 flex flex-col gap-2">
-        <div className="font-extrabold text-6xl">w0nder</div>
-        <div>개발합니다. 만듭니다.</div>
-      </div>
+      <div className="px-4">
+        <Image
+          alt="profile_image"
+          src="/images/profile_image.jpg"
+          width="250"
+          height="250"
+          className="rounded-full border-2 border-fuchsia-500"
+        />
+        <div className="py-10 flex flex-col gap-2">
+          <div className="font-extrabold text-6xl">w0nder</div>
+          <div>개발합니다. 만듭니다.</div>
+        </div>
 
-      <ul>
-        <Link href={`mailto:${Email}`} target="_blank">
-          <li className={LinkStyle}>
-            <span>✉️</span>
-            <span>{Email}</span>
-          </li>
-        </Link>
-        <Link href={TwitterLink} target="_blank">
-          <li className={LinkStyle}>
-            <span>🐦‍⬛</span>
-            <span>{TwitterLink}</span>
-          </li>
-        </Link>
-      </ul>
+        <ul>
+          <Link href={`mailto:${Email}`} target="_blank">
+            <li className={LinkStyle}>
+              <span>
+                ️<i className="ri-mail-line" />
+                &nbsp;Email
+              </span>
+              <span>{Email}</span>
+            </li>
+          </Link>
+          <Link href={TwitterLink} target="_blank">
+            <li className={LinkStyle}>
+              <span>
+                <i className="ri-twitter-line" />
+                &nbsp;Twitter
+              </span>
+              <span>{TwitterLink}</span>
+            </li>
+          </Link>
+          <Link href={BinaryBookClubUrl} target="_blank">
+            <li className={LinkStyle}>
+              <span>
+                <i className="ri-book-open-line" />
+                &nbsp;Binary Book Club
+              </span>
+            </li>
+          </Link>
+        </ul>
+      </div>
     </DefaultLayout>
   </>
 );

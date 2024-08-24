@@ -21,12 +21,14 @@ const PostsPage = ({ posts }: PostsProps) => {
       <HeadContentMeta title="글 목록" description={description} ogUrl={`${Configure.ServiceUrl}/images/og.png`} />
 
       <DefaultLayout>
-        <ul>
+        <ul className="px-4">
           {posts.map(post => (
             <Link key={post.uuid} href={post.url}>
-              <li className={PostItemStyle}>
+              <li className="text-base py-4 border-b flex justify-between items-center gap-1.5 hover:border-b-fuchsia-500">
                 <div className="flex flex-col gap-1">
-                  <span className={PostDateStyle}>{DateTime.fromISO(post.createdAt).toFormat('yyyy.MM.dd')}</span>
+                  <span className="flex-shrink-0 font-normal text-gray-400 text-sm">
+                    {DateTime.fromISO(post.createdAt).toFormat('yyyy.MM.dd')}
+                  </span>
                   <span className="block">{post.title}</span>
                 </div>
               </li>
@@ -47,7 +49,3 @@ export const getStaticProps: GetStaticProps = async () => {
     props: { posts },
   };
 };
-
-const PostItemStyle = 'text-base py-4 border-b flex justify-between items-center gap-1.5';
-
-const PostDateStyle = 'flex-shrink-0 font-normal text-gray-400 text-sm';

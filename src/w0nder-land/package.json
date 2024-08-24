@@ -13,6 +13,7 @@
     "load-env": "env-cmd -f env/.env.$ENVIRONMENT"
   },
   "dependencies": {
+    "@slack/web-api": "7.3.4",
     "@tiptap/extension-bubble-menu": "2.1.13",
     "@tiptap/extension-code": "2.1.13",
     "@tiptap/extension-code-block": "2.1.13",
@@ -25,6 +26,7 @@
     "@tiptap/react": "2.1.13",
     "@tiptap/starter-kit": "2.1.13",
     "@vercel/og": "0.6.2",
+    "axios": "1.7.5",
     "cheerio": "1.0.0",
     "env-cmd": "10.1.0",
     "gray-matter": "4.0.3",
