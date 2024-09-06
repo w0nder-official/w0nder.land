@@ -1,13 +1,13 @@
 import { ImageResponse } from '@vercel/og';
 import { NextRequest } from 'next/server';
-import cheerio from 'cheerio';
+import { load } from 'cheerio';
 
 export const config = {
   runtime: 'edge',
 };
 
 const getMetaData = (html: string) => {
-  const $ = cheerio.load(html);
+  const $ = load(html);
 
   const headTitle = $('head title').text();
   const metaDescription = $('meta[name="description"]').attr('content');
