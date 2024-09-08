@@ -82,7 +82,7 @@
 }
 
 .tiptap pre {
-  background: #0d0d0d;
+  background: #3d3d3d;
   border-radius: 0.5rem;
   color: #fff;
   font-family: "JetBrainsMono", monospace;
@@ -92,7 +92,7 @@
 .tiptap pre code {
   background: none;
   color: inherit;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   padding: 0;
 }
 
