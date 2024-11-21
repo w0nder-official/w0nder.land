@@ -1,5 +1,5 @@
 ---
-title: "나는 열린 마음의 소유자인가?"
+title: "나는 열린 마음의 소유자인가"
 author: "w0nder"
 shortUrl: "am-i-open-minded"
 authorProfile: "/images/profile_image.jpg"
