@@ -16,8 +16,8 @@ keywords: [
   "기술 활용",
   "AI 시대"
 ]
-createdAt: "2024-11-21T09:00:00Z"
-updatedAt: "2024-11-21T09:00:00Z"
+createdAt: "2024-11-22T09:00:00Z"
+updatedAt: "2024-11-22T09:00:00Z"
 ---
 
 <link-preview url="https://ridibooks.com/books/443001374" title="AI 트루스" target="_blank" image="https://img.ridicdn.net/cover/443001374/xxlarge">

@@ -24,9 +24,8 @@ const getMetaData = (html: string) => {
   };
 };
 
-const BorderColor = '#E500FF';
 const FontColor = '#000000';
-const BackgroundColor = '#FFFFFF';
+const BackgroundColor = '#FFFCF7';
 
 const Fonts: { PretendardBold?: ArrayBuffer; PretendardRegular?: ArrayBuffer } = {};
 const loadFonts = async () => {
@@ -70,7 +69,7 @@ export default async function handler(req: NextRequest) {
           position: 'relative',
           display: 'flex',
           flexDirection: 'column',
-          gap: 40,
+          gap: 8,
           color: FontColor,
           backgroundColor: BackgroundColor,
           width: '100%',
@@ -80,7 +79,7 @@ export default async function handler(req: NextRequest) {
         <p
           style={{
             display: 'block',
-            fontSize: 60,
+            fontSize: 48,
             fontFamily: '"Pretendard"',
             fontWeight: 700,
             lineClamp: '1 "...   "',
@@ -90,37 +89,26 @@ export default async function handler(req: NextRequest) {
         <p
           style={{
             display: 'block',
-            fontSize: 50,
+            fontSize: 44,
             fontFamily: '"Pretendard"',
             fontWeight: 400,
-            lineHeight: 1.4,
-            lineClamp: '4 "...   "',
+            lineHeight: 1.7,
+            lineClamp: '3 "...   "',
           }}>
           {description}
         </p>
-
         <div
           style={{
+            display: 'flex',
             position: 'absolute',
-            left: 40,
-            top: 40,
-            right: 40,
-            bottom: 40,
-            border: `6px solid ${BorderColor}`,
-            borderRadius: 50,
-          }}
-        />
-
-        <div
-          style={{
-            position: 'absolute',
-            right: 35,
-            bottom: 25,
-            paddingLeft: 40,
+            right: 84,
+            bottom: 84,
+            paddingLeft: 84,
+            paddingTop: 84,
             fontSize: 60,
             fontFamily: '"Pretendard"',
             fontWeight: 700,
-            backgroundColor: BackgroundColor,
+            color: '#ff6289',
           }}>
           w0nder.land
         </div>
