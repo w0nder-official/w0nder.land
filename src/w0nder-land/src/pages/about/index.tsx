@@ -66,7 +66,7 @@ const AboutPage = () => (
           <Link href={ShowYourTimeLink} target="_blank">
             <li className={LinkStyle}>
               <span>
-                <i className="ri-camera-ai-fill" />
+                <i className="ri-camera-fill" />
                 &nbsp;Show Your Time
               </span>
               <span>{ShowYourTimeLink}</span>
