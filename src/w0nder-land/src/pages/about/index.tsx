@@ -2,10 +2,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ProfilePage, WithContext } from 'schema-dts';
 import { DefaultLayout } from '@/components/layouts/DefaultLayout';
-import { Email, GithubLink, TwitterLink } from '@/constants/common';
+import { Email, FiWorkersLink, GithubLink, ShowYourTimeLink, TwitterLink } from '@/constants/common';
 import { HeadContentMeta } from '@/components/common/HeadContentMeta';
 import { Configure } from '@/constants/configure';
-import { TwitterFollowButton } from 'react-twitter-embed';
 
 const BinaryBookClubUrl = '/binary-book-club';
 const Description = `개발합니다. 만듭니다. ${TwitterLink}`;
@@ -61,7 +60,25 @@ const AboutPage = () => (
                 <i className="ri-twitter-line" />
                 &nbsp;Twitter
               </span>
-              <TwitterFollowButton options={{ size: 'large' }} placeholder="Loading" screenName="w0nder_official" />
+              <span>{TwitterLink}</span>
+            </li>
+          </Link>
+          <Link href={ShowYourTimeLink} target="_blank">
+            <li className={LinkStyle}>
+              <span>
+                <i className="ri-camera-ai-fill" />
+                &nbsp;Show Your Time
+              </span>
+              <span>{ShowYourTimeLink}</span>
+            </li>
+          </Link>
+          <Link href={FiWorkersLink} target="_blank">
+            <li className={LinkStyle}>
+              <span>
+                <i className="ri-building-line" />
+                &nbsp;fi-workers
+              </span>
+              <span>{FiWorkersLink}</span>
             </li>
           </Link>
           <Link href={GithubLink} target="_blank">
