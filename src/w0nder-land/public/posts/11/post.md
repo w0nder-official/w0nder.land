@@ -1,5 +1,5 @@
 ---
-title: "그 많던 사이드 프로젝트는 다 어디로 갔을까?"
+title: "그 많던 사이드 프로젝트는 다 어디로 갔을까"
 author: "w0nder"
 shortUrl: "side-project-failure"
 authorProfile: "/images/profile_image.jpg"
@@ -22,7 +22,7 @@ updatedAt: "2025-01-25T09:00:00Z"
 ---
 
 
-<link-preview url="https://speakerdeck.com/w0nder_official/geu-manhdeon-saideu-peurojegteuneun-da-eodiro-gasseulgga" title="그 많던 사이드 프로젝트는 다 어디로 갔을까?" target="_blank" image="/posts/11/assets/side-project-failure.png">
+<link-preview url="https://speakerdeck.com/w0nder_official/geu-manhdeon-saideu-peurojegteuneun-da-eodiro-gasseulgga" title="그 많던 사이드 프로젝트는 다 어디로 갔을까?" target="_blank" image="https://files.speakerdeck.com/presentations/c6632b76be284d7ca1cef0d5744eef75/preview_slide_0.jpg">
 </link-preview>
 
 
