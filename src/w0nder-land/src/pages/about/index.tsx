@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ProfilePage, WithContext } from 'schema-dts';
 import { DefaultLayout } from '@/components/layouts/DefaultLayout';
-import { Email, FiWorkersLink, GithubLink, ShowYourTimeLink, TwitterLink } from '@/constants/common';
+import { CoffeeChatLink, Email, FiWorkersLink, GithubLink, ShowYourTimeLink, TwitterLink } from '@/constants/common';
 import { HeadContentMeta } from '@/components/common/HeadContentMeta';
 import { Configure } from '@/constants/configure';
 
@@ -98,6 +98,15 @@ const AboutPage = () => (
                 &nbsp;Github
               </span>
               <span>{GithubLink}</span>
+            </li>
+          </Link>
+          <Link href={CoffeeChatLink} target="_blank">
+            <li className={LinkStyle}>
+              <span>
+                <i className="ri-cup-fill" />
+                &nbsp;Coffee Chat
+              </span>
+              <span>{CoffeeChatLink}</span>
             </li>
           </Link>
           <Link href={BinaryBookClubUrl} target="_blank">
