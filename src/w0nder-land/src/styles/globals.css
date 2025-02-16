@@ -12,7 +12,7 @@
 }
 
 /* Basic editor styles */
-.tiptap > * + * {
+.tiptap>*+* {
   margin-top: 0.75em;
 }
 
@@ -110,8 +110,9 @@
 }
 
 .tiptap blockquote {
-  border-left: 2px solid rgba(13, 13, 13, 0.1);
-  padding-left: 1rem;
+  border-left: 4px solid rgba(13, 13, 13, 0.1);
+  background-color: rgba(13, 13, 13, 0.05);
+  padding: 0.5rem 1rem;
 }
 
 .tiptap hr {
@@ -130,12 +131,12 @@
   display: flex;
 }
 
-.tiptap ul[data-type="taskList"] li > label {
+.tiptap ul[data-type="taskList"] li>label {
   flex: 0 0 auto;
   margin-right: 0.5rem;
   user-select: none;
 }
 
-.tiptap ul[data-type="taskList"] li > div {
+.tiptap ul[data-type="taskList"] li>div {
   flex: 1 1 auto;
 }

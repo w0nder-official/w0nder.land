@@ -49,9 +49,9 @@ const LinkPreviewView = ({
   <NodeViewWrapper>
     <div className="mx-auto overflow-hidden bg-white rounded-lg border border-gray-200 flex flex-row">
       <a href={node.attrs.url} target={node.attrs.target} rel="noreferrer" className="flex-grow flex items-center ">
-        <div className="px-5">
+        <div className="p-5">
           <p className="link-title text-base font-bold text-gray-900">{node.attrs.title}</p>
-          <p className="link text-m text-gray-400">{node.attrs.url}</p>
+          <p className="link text-sm text-gray-400" style={{ fontSize: '0.875rem', color: '#9CA3AF' }}>{node.attrs.url}</p>
         </div>
       </a>
 
