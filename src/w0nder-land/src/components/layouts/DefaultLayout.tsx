@@ -10,8 +10,8 @@ export const DefaultLayout = ({ fullHeight, children }: { fullHeight?: boolean; 
 
     <main className="w-full max-w-3xl h-full">{children}</main>
 
-    <footer className="w-full max-w-3xl mx-2 p-2 my-10 flex gap-4">
-      <span className="py-2">@2024, w0nder</span>
+    <footer className="w-full max-w-3xl mx-2 p-4 my-10 flex gap-4">
+      <span className="py-2">@2025, w0nder</span>
       <Link href="/rss.xml" target="_blank" className="py-2">
         RSS
       </Link>

@@ -1,13 +1,14 @@
+import { HeadContentMeta } from '@/components/common/HeadContentMeta';
+import { Share } from '@/components/common/Share';
+import { DefaultLayout } from '@/components/layouts/DefaultLayout';
+import { CoffeeChatLink, Email, FiWorkersLink, GithubLink, ShowYourTimeLink, TwitterLink } from '@/constants/common';
+import { Configure } from '@/constants/configure';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ProfilePage, WithContext } from 'schema-dts';
-import { DefaultLayout } from '@/components/layouts/DefaultLayout';
-import { CoffeeChatLink, Email, FiWorkersLink, GithubLink, ShowYourTimeLink, TwitterLink } from '@/constants/common';
-import { HeadContentMeta } from '@/components/common/HeadContentMeta';
-import { Configure } from '@/constants/configure';
 
 const BinaryBookClubUrl = '/binary-book-club';
-const Description = `개발합니다. 만듭니다. ${TwitterLink}`;
+const Description = '개발합니다. 만듭니다.';
 
 const structuredData: WithContext<ProfilePage> = {
   '@context': 'https://schema.org',
@@ -54,11 +55,15 @@ const AboutPage = () => (
           </div>
         </div>
 
+        <div className="py-10">
+          <Share title="w0nder" text={Description} url={`${Configure.ServiceUrl}/about`} />
+        </div>
+
         <ul>
           <Link href={`mailto:${Email}`} target="_blank">
             <li className={LinkStyle}>
               <span>
-                ️<i className="ri-mail-line" />
+                <i className="ri-mail-line" />
                 &nbsp;Email
               </span>
               <span>{Email}</span>
