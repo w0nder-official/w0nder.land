@@ -1,19 +1,18 @@
-import { useCallback, useMemo, useState } from 'react';
-import { DateTime } from 'luxon';
 import { HeadContentMeta } from '@/components/common/HeadContentMeta';
-import type { BlogPosting, WithContext } from 'schema-dts';
-import Image from 'next/image';
-import { GetStaticPaths, GetStaticProps } from 'next';
-import { getAllPosts, Post } from '@/repository/posts';
-import { getPostUrl } from '@/libs/utils/urls';
-import { ellipsis } from '@/libs/utils/string';
-import { DefaultLayout } from '@/components/layouts/DefaultLayout';
-import { getTexts } from '@/components/editor/utils';
-import { Editor } from '@/components/editor/Editor';
-import { ShareIcon } from '@/icons/ShareIcon';
-import { ShareService, ShareTarget } from '@/libs/Share';
-import { Configure } from '@/constants/configure';
 import { Share } from '@/components/common/Share';
+import { Editor } from '@/components/editor/Editor';
+import { getTexts } from '@/components/editor/utils';
+import { DefaultLayout } from '@/components/layouts/DefaultLayout';
+import { Configure } from '@/constants/configure';
+import { ShareIcon } from '@/icons/ShareIcon';
+import { ellipsis } from '@/libs/utils/string';
+import { getPostUrl } from '@/libs/utils/urls';
+import { getAllPosts, Post } from '@/repository/posts';
+import { DateTime } from 'luxon';
+import { GetStaticPaths, GetStaticProps } from 'next';
+import Image from 'next/image';
+import { useCallback, useMemo, useState } from 'react';
+import type { BlogPosting, WithContext } from 'schema-dts';
 
 type PostProps = {
   post: Post;
