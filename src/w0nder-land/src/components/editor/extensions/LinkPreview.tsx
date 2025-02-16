@@ -51,7 +51,9 @@ const LinkPreviewView = ({
       <a href={node.attrs.url} target={node.attrs.target} rel="noreferrer" className="flex-grow flex items-center ">
         <div className="p-5">
           <p className="link-title text-base font-bold text-gray-900">{node.attrs.title}</p>
-          <p className="link text-sm text-gray-400" style={{ fontSize: '0.875rem', color: '#9CA3AF' }}>{node.attrs.url}</p>
+          <p className="link text-sm text-gray-400" style={{ fontSize: '0.875rem', color: '#9CA3AF' }}>
+            {node.attrs.url}
+          </p>
         </div>
       </a>
 
