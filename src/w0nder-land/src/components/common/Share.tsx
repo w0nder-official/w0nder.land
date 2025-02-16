@@ -3,8 +3,19 @@ import { copyText } from '@/libs/utils/common';
 import { QRCodeSVG } from 'qrcode.react';
 import { useCallback, useMemo, useState } from 'react';
 
-export const Share = ({ title, text, url }: { title: string; text: string; url: string }) => {
-  const [isOpen, setIsOpen] = useState(false);
+export const Share = ({
+  title,
+  text,
+  url,
+  isOpen,
+  onClose,
+}: {
+  title: string;
+  text: string;
+  url: string;
+  isOpen: boolean;
+  onClose: () => void;
+}) => {
   const [showQR, setShowQR] = useState(false);
 
   const handleQRClose = useCallback(() => {
@@ -15,14 +26,10 @@ export const Share = ({ title, text, url }: { title: string; text: string; url: 
     setShowQR(true);
   }, []);
 
-  const handleOpen = useCallback(() => {
-    setIsOpen(true);
-  }, []);
-
   const handleClose = useCallback(() => {
-    setIsOpen(false);
+    onClose();
     setShowQR(false);
-  }, []);
+  }, [onClose]);
 
   const handleShare = useCallback(async () => {
     await ShareService.share({
@@ -93,19 +100,6 @@ export const Share = ({ title, text, url }: { title: string; text: string; url: 
 
   return (
     <div className="relative">
-      <button
-        type="button"
-        onClick={handleOpen}
-        className="p-2 w-full flex justify-center items-center border rounded-lg
-        border-gray-300
-        active:bg-gray-100 active:border-gray-500 active:scale-[0.99]
-        transition-all duration-150">
-        <span>
-          <i className="ri-share-line" />
-          &nbsp;&nbsp;공유하기
-        </span>
-      </button>
-
       {isOpen && (
         <>
           {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}

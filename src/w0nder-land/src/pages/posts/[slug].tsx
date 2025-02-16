@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { DateTime } from 'luxon';
 import { HeadContentMeta } from '@/components/common/HeadContentMeta';
 import type { BlogPosting, WithContext } from 'schema-dts';
@@ -13,12 +13,15 @@ import { Editor } from '@/components/editor/Editor';
 import { ShareIcon } from '@/icons/ShareIcon';
 import { ShareService, ShareTarget } from '@/libs/Share';
 import { Configure } from '@/constants/configure';
+import { Share } from '@/components/common/Share';
 
 type PostProps = {
   post: Post;
 };
 
 const PostPage = ({ post }: PostProps) => {
+  const [isShareOpen, setIsShareOpen] = useState(false);
+
   const postCreatedAt = useMemo(() => post && DateTime.fromISO(post.createdAt), [post]);
 
   // 80자 이상이 되면 검색엔진에서 잘 처리해주지 못한다 80자 이상이면 ellipsis 처리를 해준다.
@@ -44,24 +47,13 @@ const PostPage = ({ post }: PostProps) => {
     [description, post, text.length, title],
   );
 
-  const handleShare = useCallback(async () => {
-    try {
-      if (
-        (await ShareService.share({
-          title: post?.title ?? 'w0nder.land',
-          url: `${Configure.ServiceUrl}${post?.shortUrl ?? post?.url ?? ''}`,
-        })) === ShareTarget.Copy
-      ) {
-        alert('링크를 복사했습니다.');
-      }
-    } catch (e) {
-      if (e instanceof Error && (e.message.includes('canceled') || e.name.includes('canceled'))) {
-        return;
-      }
+  const handleShareOpen = useCallback(() => {
+    setIsShareOpen(true);
+  }, []);
 
-      alert('공유하기에 실패했습니다.');
-    }
-  }, [post?.shortUrl, post?.title, post?.url]);
+  const handleShareClose = useCallback(() => {
+    setIsShareOpen(false);
+  }, []);
 
   if (!post) {
     return (
@@ -92,7 +84,7 @@ const PostPage = ({ post }: PostProps) => {
                 className="rounded-full border border-slate-200"
               />
               <span>{post.author}</span>
-              <button type="button" aria-label="share" onClick={handleShare}>
+              <button type="button" aria-label="share" onClick={handleShareOpen}>
                 <ShareIcon size={24} color="#000000" />
               </button>
             </div>
@@ -102,6 +94,14 @@ const PostPage = ({ post }: PostProps) => {
           <Editor content={post.article} editable={false} />
         </section>
       </article>
+
+      <Share
+        title={title}
+        text={description}
+        url={`${Configure.ServiceUrl}${post?.shortUrl ?? post?.url ?? ''}`}
+        isOpen={isShareOpen}
+        onClose={handleShareClose}
+      />
     </DefaultLayout>
   );
 };
