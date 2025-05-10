@@ -1,5 +1,5 @@
 ---
-title: '어디에 살고 싶으세요?'
+title: '어디에 살고 싶으세요'
 author: 'w0nder'
 shortUrl: 'where-to-live'
 authorProfile: '/images/profile_image.jpg'
