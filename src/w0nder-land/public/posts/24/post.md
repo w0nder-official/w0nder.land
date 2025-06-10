@@ -4,8 +4,8 @@ author: 'w0nder'
 shortUrl: 'qingdao-cafe-moment'
 authorProfile: '/images/profile_image.jpg'
 keywords: ['칭다오', '여행', '카페', '선택', '성찰', '여행기']
-createdAt: '2025-06-01T09:00:00Z'
-updatedAt: '2025-06-01T10:30:00Z'
+createdAt: '2025-06-08T09:00:00Z'
+updatedAt: '2025-06-08T10:30:00Z'
 ---
 
 짧게 2박3일로 칭다오에 여행을 다녀왔다.
