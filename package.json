@@ -24,9 +24,9 @@
     ]
   },
   "devDependencies": {
-    "concurrently": "8.2.2",
-    "husky": "9.1.4",
-    "lint-staged": "15.2.9"
+    "concurrently": "9.1.2",
+    "husky": "9.1.7",
+    "lint-staged": "16.1.2"
   },
   "packageManager": "yarn@4.3.0"
 }

@@ -21,7 +21,7 @@ const PostsPage = ({ posts }: PostsProps) => {
       <HeadContentMeta title="글 목록" description={description} ogUrl={`${Configure.ServiceUrl}/images/og.png`} />
 
       <DefaultLayout>
-        <ul className="px-2">
+        <ul className="p-2">
           {posts.map(post => (
             <Link key={post.uuid} href={post.url}>
               <li className="text-base py-4 border-b flex justify-between items-center gap-1.5 hover:border-b-fuchsia-500">
