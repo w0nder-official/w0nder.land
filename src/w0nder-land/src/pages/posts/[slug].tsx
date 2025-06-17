@@ -91,6 +91,8 @@ const PostPage = ({ post }: PostProps) => {
         </header>
         <section>
           <Editor content={post.article} editable={false} />
+
+          <div className="sr-only">{post.article}</div>
         </section>
       </article>
 
