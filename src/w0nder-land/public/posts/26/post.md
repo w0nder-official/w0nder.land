@@ -4,8 +4,8 @@ author: 'w0nder'
 shortUrl: 'bookstore-1'
 authorProfile: '/images/profile_image.jpg'
 keywords: ['책방', '서점', '창업', '큐레이션', '오프라인', '개발자']
-createdAt: '2025-06-15T09:00:00Z'
-updatedAt: '2025-06-15T10:30:00Z'
+createdAt: '2025-06-22T09:00:00Z'
+updatedAt: '2025-06-22T10:30:00Z'
 ---
 
 금요일에 서울국제도서전에 다녀왔다. 수많은 책들 사이를 걸으며 묻어두었던 생각들이 다시 떠올랐다.
