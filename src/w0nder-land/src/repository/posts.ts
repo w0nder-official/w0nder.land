@@ -11,6 +11,7 @@ interface BasePost {
   uuid: string;
   shortUrl: string;
   title: string;
+  tags: string[];
   author: string;
   authorProfile: string;
   keywords: string[];

@@ -43,7 +43,7 @@ export const Video = Node.create({
 
 const VideoView = ({ node }: { node: { attrs: { title: string; url: string } } }) => (
   <NodeViewWrapper>
-    <div className="w-full overflow-hidden bg-white rounded-lg border border-gray-200">
+    <div className="w-full overflow-hidden bg-white rounded-lg  border-2 border-yellow-400">
       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
       <video controls loop autoPlay className="w-full">
         <source src={node.attrs.url} type="video/mp4" title={node.attrs.title} />

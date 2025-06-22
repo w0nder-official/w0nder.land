@@ -1,44 +1,52 @@
-import { useMemo } from 'react';
-import { DateTime } from 'luxon';
-import { getAllPosts, Post } from '@/repository/posts';
-import { HeadContentMeta } from '@/components/common/HeadContentMeta';
-import Link from 'next/link';
-import { GetStaticProps } from 'next';
-import { ellipsis } from '@/libs/utils/string';
+import { Nav } from '@/components/common/Nav';
 import { DefaultLayout } from '@/components/layouts/DefaultLayout';
-import { Configure } from '@/constants/configure';
+import { Card } from '@/components/ui/card';
+import { getAllPosts, Post } from '@/repository/posts';
+import { DateTime } from 'luxon';
+import { GetStaticProps } from 'next';
+import Link from 'next/link';
+
+function getReadTime(content: string) {
+  const charsPerMinute = 400; // 한글 기준 1분에 400자
+  const { length } = content.replace(/\s/g, ''); // 공백 제외 글자수
+  const minutes = Math.max(1, Math.ceil(length / charsPerMinute));
+  return `${minutes}분`;
+}
 
 type PostsProps = {
   posts: Post[];
 };
 
-const PostsPage = ({ posts }: PostsProps) => {
-  // 80자 이상이 되면 검색엔진에서 잘 처리해주지 못한다 80자 이상이면 ellipsis 처리를 해준다.
-  const description = useMemo(() => ellipsis(posts.map(post => post.title).join(', '), 80), [posts]);
+const PostsPage = ({ posts }: PostsProps) => (
+  <DefaultLayout>
+    <Nav title="Posts" leftUrl="/" />
 
-  return (
-    <>
-      <HeadContentMeta title="글 목록" description={description} ogUrl={`${Configure.ServiceUrl}/images/og.png`} />
+    <ul className="flex flex-col">
+      {posts.map((post, idx) => (
+        <Link href={post.url} key={post.uuid}>
+          <li
+            className={`p-5 flex flex-col gap-2 border-b-4 border-black ${idx % 2 === 0 ? 'bg-amber-50' : 'bg-white'}`}>
+            <h3 className="text-3xl font-black text-black mr-2 line-clamp-2">{post.title}</h3>
 
-      <DefaultLayout>
-        <ul className="p-2">
-          {posts.map(post => (
-            <Link key={post.uuid} href={post.url}>
-              <li className="text-base py-4 border-b flex justify-between items-center gap-1.5 hover:border-b-fuchsia-500">
-                <div className="flex flex-col gap-1 px-2">
-                  <span className="flex-shrink-0 font-normal text-gray-400 text-sm">
-                    {DateTime.fromISO(post.createdAt).toFormat('yyyy.MM.dd')}
-                  </span>
-                  <span className="block">{post.title}</span>
-                </div>
-              </li>
-            </Link>
-          ))}
-        </ul>
-      </DefaultLayout>
-    </>
-  );
-};
+            <ul className="flex flex-row gap-2">
+              {post.tags?.map(tag => (
+                <li key={tag} className="text-2xl bg-black text-white px-2 py-1 font-black">
+                  {tag}
+                </li>
+              ))}
+            </ul>
+
+            <div className="flex items-center space-x-3 text-xl font-bold text-gray-700">
+              <span>{getReadTime(post.article)}</span>
+              <span>•</span>
+              <span>{DateTime.fromISO(post.createdAt).toFormat('yyyy.MM.dd')}</span>
+            </div>
+          </li>
+        </Link>
+      ))}
+    </ul>
+  </DefaultLayout>
+);
 
 export default PostsPage;
 

@@ -27,7 +27,7 @@ export const CustomImageView = ({
 }) => (
   <NodeViewWrapper>
     <NextImage
-      className="rounded max-w-full h-auto my-0 mx-auto mt-8 border"
+      className="rounded max-w-full h-auto my-0 mx-auto mt-8 border-2 border-yellow-400"
       src={node.attrs.src}
       alt={node.attrs.alt}
       width={node.attrs.width ?? 600}

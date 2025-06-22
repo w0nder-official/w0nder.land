@@ -1,4 +1,5 @@
 import { HeadContentMeta } from '@/components/common/HeadContentMeta';
+import { Nav } from '@/components/common/Nav';
 import { Share } from '@/components/common/Share';
 import { Editor } from '@/components/editor/Editor';
 import { getTexts } from '@/components/editor/utils';
@@ -10,7 +11,6 @@ import { getPostUrl } from '@/libs/utils/urls';
 import { getAllPosts, Post } from '@/repository/posts';
 import { DateTime } from 'luxon';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import Image from 'next/image';
 import { useCallback, useMemo, useState } from 'react';
 import type { BlogPosting, WithContext } from 'schema-dts';
 
@@ -26,7 +26,7 @@ const PostPage = ({ post }: PostProps) => {
   // 80자 이상이 되면 검색엔진에서 잘 처리해주지 못한다 80자 이상이면 ellipsis 처리를 해준다.
   const text = useMemo(() => getTexts(post?.article ?? []), [post]);
   const title = useMemo(() => ellipsis(post?.title ?? '', 80), [post]);
-  const description = useMemo(() => ellipsis(text.replaceAll('\n', ' ') ?? '', 140), [text]);
+  const description = useMemo(() => ellipsis(text.replaceAll('\n', ' ') ?? '', 200), [text]);
 
   const structuredData: WithContext<BlogPosting> | undefined = useMemo(
     () =>
@@ -57,9 +57,11 @@ const PostPage = ({ post }: PostProps) => {
   if (!post) {
     return (
       <DefaultLayout>
+        <Nav title="Posts" leftUrl="/posts" />
+
         <article className="flex flex-col gap-6 px-4">
           <header>
-            <h1 className={PostTitleStyle}>글이 없어요.</h1>
+            <h1 className="font-medium text-3xl">글이 없어요.</h1>
           </header>
         </article>
       </DefaultLayout>
@@ -67,43 +69,39 @@ const PostPage = ({ post }: PostProps) => {
   }
 
   return (
-    <DefaultLayout>
+    <>
       <HeadContentMeta title={title} description={description} structuredData={structuredData} />
-      <article className="flex flex-col gap-6 px-4">
-        <header>
-          <h1 className={PostTitleStyle}>{post.title}</h1>
-          <div className="flex flex-row justify-between items-center my-4 text-base">
-            <span className={PostDateStyle}>{postCreatedAt?.toFormat('yyyy.MM.dd')}</span>
-            <div className="flex flex-row gap-2 items-center">
-              <Image
-                alt="profile_image"
-                src={post.authorProfile}
-                width="24"
-                height="24"
-                className="rounded-full border border-slate-200"
-              />
-              <span>{post.author}</span>
-              <button type="button" aria-label="share" onClick={handleShareOpen}>
-                <ShareIcon size={24} color="#000000" />
-              </button>
+      <DefaultLayout>
+        <Nav title="Posts" leftUrl="/posts" />
+
+        <article className="flex flex-col gap-6 p-4">
+          <header>
+            <h1 className="font-medium text-3xl">{post.title}</h1>
+            <div className="flex flex-row justify-between items-center my-4 text-base">
+              <span className="flex-shrink-0 font-normal text-gray-500">{postCreatedAt?.toFormat('yyyy.MM.dd')}</span>
+              <div className="flex flex-row gap-2 items-center">
+                <button type="button" aria-label="share" onClick={handleShareOpen}>
+                  <ShareIcon size={24} color="#000000" />
+                </button>
+              </div>
             </div>
-          </div>
-        </header>
-        <section>
-          <Editor content={post.article} editable={false} />
+          </header>
+          <section>
+            <Editor content={post.article} editable={false} />
 
-          <div className="sr-only">{post.article}</div>
-        </section>
-      </article>
+            <div className="sr-only">{post.article}</div>
+          </section>
+        </article>
 
-      <Share
-        title={title}
-        text={description}
-        url={`${Configure.ServiceUrl}${post?.shortUrl ?? post?.url ?? ''}`}
-        isOpen={isShareOpen}
-        onClose={handleShareClose}
-      />
-    </DefaultLayout>
+        <Share
+          title={title}
+          text={description}
+          url={`${Configure.ServiceUrl}${post?.shortUrl ?? post?.url ?? ''}`}
+          isOpen={isShareOpen}
+          onClose={handleShareClose}
+        />
+      </DefaultLayout>
+    </>
   );
 };
 
@@ -143,6 +141,3 @@ export const getStaticPaths: GetStaticPaths = async () => {
     fallback: false, // 이 부분은 fallback 설정에 따라 다를 수 있습니다.
   };
 };
-
-const PostTitleStyle = 'font-medium text-3xl';
-const PostDateStyle = 'flex-shrink-0 font-normal text-gray-500';
