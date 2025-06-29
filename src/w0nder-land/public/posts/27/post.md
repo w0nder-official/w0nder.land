@@ -1,11 +1,12 @@
 ---
 title: '2025년 반년 회고'
 author: 'w0nder'
-shortUrl: 'bookstore-1'
+shortUrl: '2025-half-year-retrospect'
 authorProfile: '/images/profile_image.jpg'
-keywords: ['책방', '서점', '창업', '큐레이션', '오프라인', '개발자']
-createdAt: '2025-06-22T09:00:00Z'
-updatedAt: '2025-06-22T10:30:00Z'
+keywords:
+  ['회고', '2025년', '반년', '사업', 'AI도서', '겸임교수', 'SaaS', 'Checkable', '대표', '개발자', '정체성', '고민']
+createdAt: '2025-06-29T09:00:00Z'
+updatedAt: '2025-06-29T10:30:00Z'
 ---
 
 2025년 6월 30일, 사업을 시작한 지 정확히 반년이 되었다. 작년 12월 31일 새해를 앞두고 그렸던 만다라트의 목표들을 하나씩 점검해보니 묘한 기분이 든다.
