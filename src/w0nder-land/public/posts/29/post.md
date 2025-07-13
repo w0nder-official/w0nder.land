@@ -8,7 +8,7 @@ createdAt: '2025-07-13T09:00:00Z'
 updatedAt: '2025-07-13T10:30:00Z'
 ---
 
-<link-preview url="https://w0nder-land/s/bookstore-2" title="책방 (1)" target="_blank">
+<link-preview url="https://w0nder.land/s/bookstore-1" title="책방 (1)" target="_blank">
 </link-preview>
 
 도서전에서 돌아온 뒤, 다시 현실적인 고민이 시작됐다. 책방을 꿈꾸며 가장 먼저 부딪힌 질문은 여전히 같았다. '이걸로 정말 먹고 살 수 있을까?'
