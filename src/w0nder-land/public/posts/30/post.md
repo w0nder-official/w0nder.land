@@ -33,13 +33,21 @@ Tailscale을 사용하고 있는 환경에서 Redash에 접근하려고 할 때 
 
 ### HTTP Challenge vs DNS Challenge
 
-| 구분          | HTTP Challenge                   | DNS Challenge                 |
-| ------------- | -------------------------------- | ----------------------------- |
-| **필요 조건** | Public IP + 80/443 포트          | DNS API 접근 권한             |
-| **동작 방식** | Let's Encrypt가 서버에 직접 접근 | DNS 레코드를 통한 소유권 확인 |
-| **VPN 환경**  | ❌ 불가능                        | ✅ 가능                       |
-| **방화벽 뒤** | ❌ 불가능                        | ✅ 가능                       |
-| **자동화**    | 부분적                           | ✅ 완전 자동화                |
+**HTTP Challenge**
+
+- **필요 조건**: Public IP + 80/443 포트
+- **동작 방식**: Let's Encrypt가 서버에 직접 접근
+- **VPN 환경**: ❌ 불가능
+- **방화벽 뒤**: ❌ 불가능
+- **자동화**: 부분적
+
+**DNS Challenge**
+
+- **필요 조건**: DNS API 접근 권한
+- **동작 방식**: DNS 레코드를 통한 소유권 확인
+- **VPN 환경**: ✅ 가능
+- **방화벽 뒤**: ✅ 가능
+- **자동화**: ✅ 완전 자동화
 
 ### DNS Challenge 동작 원리
 
@@ -88,13 +96,11 @@ tailscale ip -4
 
 Cloudflare 대시보드에서 다음 레코드를 추가한다:
 
-| 필드        | 값                             |
-| ----------- | ------------------------------ |
-| **Type**    | A                              |
-| **Name**    | redash                         |
-| **Content** | 100.199.199.199 (Tailscale IP) |
-| **Proxy**   | DNS only (회색 구름)           |
-| **TTL**     | Auto                           |
+- **Type**: A
+- **Name**: redash
+- **Content**: 100.199.199.199 (Tailscale IP)
+- **Proxy**: DNS only (회색 구름)
+- **TTL**: Auto
 
 #### 2.2 API 토큰 생성
 
