@@ -3,7 +3,8 @@ title: 'Tailscale + Caddy + DNS Challenge로 VPN 환경에서 SSL 인증서 발�
 author: 'w0nder'
 shortUrl: 'tailscale-caddy-dns-challenge'
 authorProfile: '/images/profile_image.jpg'
-keywords: ['Tailscale', 'Caddy', 'DNS Challenge', 'SSL 인증서', 'Let\'s Encrypt', 'VPN', 'Docker', 'Cloudflare', '인프라', '보안']
+keywords:
+  ['Tailscale', 'Caddy', 'DNS Challenge', 'SSL 인증서', 'Lets Encrypt', 'VPN', 'Docker', 'Cloudflare', '인프라', '보안']
 createdAt: '2025-07-13T09:00:00Z'
 updatedAt: '2025-07-13T10:30:00Z'
 ---
