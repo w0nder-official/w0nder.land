@@ -5,8 +5,8 @@ shortUrl: 'tailscale-caddy-dns-challenge'
 authorProfile: '/images/profile_image.jpg'
 keywords:
   ['Tailscale', 'Caddy', 'DNS Challenge', 'SSL 인증서', 'Lets Encrypt', 'VPN', 'Docker', 'Cloudflare', '인프라', '보안']
-createdAt: '2025-07-13T09:00:00Z'
-updatedAt: '2025-07-13T10:30:00Z'
+createdAt: '2025-07-15T09:00:00Z'
+updatedAt: '2025-07-15T10:30:00Z'
 ---
 
 ## 개요
