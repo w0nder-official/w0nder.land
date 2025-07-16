@@ -22,7 +22,7 @@ updatedAt: '2025-07-16T10:30:00Z'
 
 ## 문제 상황
 
-Show Your Time 앱에서 찍은 인증 사진을 체커블에 바로 업로드할 수 있는 기능을 구현하기 위해 OAuth 인증 시스템이 필요했다. React Native에서 OAuth를 구현하기 위해 react-native-app-auth 라이브러리를 선택했다.
+[Show Your Time](https://showyourti.me) 앱에서 찍은 인증 사진을 [Checkable](https://checkable.app)에 바로 업로드할 수 있는 기능을 구현하기 위해 OAuth 인증 시스템이 필요했다. React Native에서 OAuth를 구현하기 위해 [react-native-app-auth](https://github.com/FormidableLabs/react-native-app-auth) 라이브러리를 선택했다.
 
 <link-preview url="https://showyourti.me" title="Show Your Time" target="_blank" image="https://www.showyourti.me/images/og.png">
 </link-preview>
@@ -149,3 +149,9 @@ const config: AuthConfiguration = {
 ## 교훈
 
 공식 문서를 꼼꼼히 읽는 것이 중요하다. 특히 플랫폼별 주의사항은 반드시 확인해야 한다. iOS에서만 테스트하지 말고 Android도 함께 테스트해야 하며, 새로운 라이브러리를 도입할 때는 문서를 더욱 꼼꼼히 읽고 모든 플랫폼에서 테스트하는 습관을 가져야 한다.
+
+## 참고문헌
+
+- [authorize() returns error 'Data intent is null' on Android · Issue #494 · FormidableLabs/react-native-app-auth](https://github.com/FormidableLabs/react-native-app-auth/issues/494#issuecomment-728962072)
+- [Data intent is null in Android using Universal Links/AppLinks using React Native - Stack Overflow](https://stackoverflow.com/questions/75873663/data-intent-is-null-in-android-using-universal-links-applinks-using-react-native)
+- [GitHub - FormidableLabs/react-native-app-auth: React native bridge for AppAuth - an SDK for communicating with OAuth2 providers](https://github.com/FormidableLabs/react-native-app-auth?tab=readme-ov-file#notes)
