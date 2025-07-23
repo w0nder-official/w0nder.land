@@ -1,6 +1,5 @@
 import { Nav } from '@/components/common/Nav';
 import { DefaultLayout } from '@/components/layouts/DefaultLayout';
-import { Card } from '@/components/ui/card';
 import { getAllPosts, Post } from '@/repository/posts';
 import { DateTime } from 'luxon';
 import { GetStaticProps } from 'next';
