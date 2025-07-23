@@ -1,7 +1,7 @@
 export const Email = 'alice@w0nder.land';
 export const TwitterLink = 'https://twitter.com/w0nder_official';
 export const ShowYourTimeLink = 'https://showyourti.me/qr';
-export const FiWorkersLink = 'https://fi-workers.com';
+export const FiWorkersLink = 'https://fi-workers.com/about';
 export const GithubLink = 'https://github.com/w0nder-official';
 export const CoffeeChatLink = 'https://www.latpeed.com/products/rSNlW';
 
@@ -58,31 +58,40 @@ export const LINKS = [
     icon: 'ri-camera-fill',
     url: ShowYourTimeLink,
     target: '_blank',
-    bg: 'bg-[#FFFFFF]',
+    bg: 'bg-lime-400',
     description: '세상에서 제일 예쁜 타임스탬프 앱',
   },
   {
     id: 2,
+    title: 'Checkable',
+    icon: 'ri-check-fill',
+    url: 'https://checkable.app',
+    target: '_blank',
+    bg: 'bg-purple-400',
+    description: '디스코드로 챌린지를 관리해 보세요.',
+  },
+  {
+    id: 3,
     title: 'fi-workers',
     icon: 'ri-building-line',
     url: FiWorkersLink,
     target: '_blank',
-    bg: 'bg-[#FFFFFF]',
+    bg: 'bg-teal-400',
   },
   {
-    id: 3,
+    id: 4,
     title: 'Coffee Chat',
     icon: 'ri-cup-fill',
     url: CoffeeChatLink,
     target: '_blank',
-    bg: 'bg-[#FFFFFF]',
+    bg: 'bg-yellow-400',
     description: '커리어/상담',
   },
   {
-    id: 4,
+    id: 5,
     title: 'Blog',
     icon: 'ri-book-open-line',
     url: '/posts',
-    bg: 'bg-[#FFFFFF]',
+    bg: 'bg-pink-400',
   },
 ];

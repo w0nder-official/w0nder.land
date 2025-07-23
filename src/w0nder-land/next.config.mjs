@@ -9,6 +9,15 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/about',
+        destination: '/',
+        permanent: false, // 302 리다이렉트
+      },
+    ];
+  },
 };
 
 export default nextConfig;
