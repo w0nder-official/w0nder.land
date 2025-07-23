@@ -60,7 +60,7 @@ const AboutPage = () => {
 
               {/* bio 박스 */}
               <div className="relative mb-6">
-                <div className="font-extrabold uppercase text-xl bg-[#FFDB58] border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] px-6 py-3 -rotate-1">
+                <div className="font-extrabold uppercase text-xl bg-[#FFDB58] border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] px-6 py-3">
                   {PROFILE.bio}
                 </div>
               </div>
@@ -70,7 +70,7 @@ const AboutPage = () => {
           <div className="py-10 flex flex-col gap-4">
             {/* description 박스 */}
             <div className="relative mb-6">
-              <div className="bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] px-6 py-4 text-xl font-bold uppercase whitespace-pre-line leading-relaxed rotate-1">
+              <div className="bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] px-6 py-4 text-xl font-bold uppercase whitespace-pre-line leading-relaxed">
                 {PROFILE.description}
               </div>
             </div>
