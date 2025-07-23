@@ -83,7 +83,7 @@ const AboutPage = () => {
                   <Button
                     variant="default"
                     size="lg"
-                    className={`border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] h-14 w-14 text-3xl font-bold uppercase rounded-xl hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none active:shadow-none active:translate-x-0 active:translate-y-0 transition-all flex items-center justify-center ${link.bg}`}>
+                    className={`border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] h-14 w-14 text-3xl font-bold uppercase hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none active:shadow-none active:translate-x-0 active:translate-y-0 transition-all flex items-center justify-center ${link.bg}`}>
                     <i className={`${link.icon} text-3xl`} />
                   </Button>
                 </Link>
@@ -92,7 +92,7 @@ const AboutPage = () => {
               <Button
                 onClick={handleShareOpen}
                 size="lg"
-                className="border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] h-14 w-14 text-3xl font-bold uppercase rounded-xl hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none active:shadow-none active:translate-x-0 active:translate-y-0 transition-all flex items-center justify-center bg-[#F4D738] text-black">
+                className="border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] h-14 w-14 text-3xl font-bold uppercase hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none active:shadow-none active:translate-x-0 active:translate-y-0 transition-all flex items-center justify-center bg-[#F4D738] text-black">
                 <span className="flex items-center gap-2">
                   <i className="ri-share-line text-3xl" />
                 </span>
@@ -116,7 +116,7 @@ const AboutPage = () => {
                           ${link.bg}
                         `}>
                   {/* 아이콘 */}
-                  <div className="flex-shrink-0 border-4 border-black bg-white rounded-lg p-2">
+                  <div className="flex-shrink-0 border-4 border-black bg-white p-2">
                     <i className={`${link.icon} text-4xl p-2`} />
                   </div>
 
