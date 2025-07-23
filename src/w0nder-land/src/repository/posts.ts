@@ -53,6 +53,7 @@ export function getPostByUuid(uuid: string) {
     updatedAt: data.updatedAt,
     url: getPostUrl(uuid, data.title),
     shortUrl: `/s/${data.shortUrl}`,
+    tags: data.tags,
   } satisfies Post;
 }
 

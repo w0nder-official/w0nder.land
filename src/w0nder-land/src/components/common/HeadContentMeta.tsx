@@ -33,22 +33,23 @@ export const HeadContentMeta = ({ title, description, ogUrl: ogUrlProps, structu
 
     return {
       __html: JSON.stringify([
-        {
-          ...structuredData,
-          image: beUnique([...(structuredData?.image ?? []), ogUrl]),
-          author: [...(structuredData?.author ?? []), author],
-          keywords: beUnique([...(structuredData?.keywords ?? []), keywords]),
-        } ??
-          ({
-            '@context': 'https://schema.org',
-            '@type': 'WebSite',
-            headline: title,
-            name: title,
-            keywords,
-            description,
-            image: [ogUrl],
-            author: [author],
-          } satisfies WithContext<WebSite>),
+        structuredData
+          ? {
+              ...structuredData,
+              image: beUnique([...(structuredData?.image ?? []), ogUrl]),
+              author: [...(structuredData?.author ?? []), author],
+              keywords: beUnique([...(structuredData?.keywords ?? []), keywords]),
+            }
+          : ({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              headline: title,
+              name: title,
+              keywords,
+              description,
+              image: [ogUrl],
+              author: [author],
+            } satisfies WithContext<WebSite>),
         {
           '@context': 'https://schema.org',
           '@type': 'Organization',

@@ -1,4 +1,4 @@
-import { mergeAttributes, Node, NodeViewWrapper, ReactNodeViewRenderer } from '@tiptap/react';
+import { mergeAttributes, Node, NodeViewWrapper, ReactNodeViewRenderer, NodeViewProps } from '@tiptap/react';
 
 export const LinkPreview = Node.create({
   name: 'linkPreview',
@@ -41,29 +41,32 @@ export const LinkPreview = Node.create({
   },
 });
 
-const LinkPreviewView = ({
-  node,
-}: {
-  node: { attrs: { title: string; url: string; target: string; image?: string } };
-}) => (
-  <NodeViewWrapper>
-    <div className="mx-auto overflow-hidden bg-white rounded-lg border-2 border-yellow-400 flex flex-row">
-      <a href={node.attrs.url} target={node.attrs.target} rel="noreferrer" className="flex-grow flex items-center ">
-        <div className="p-5">
-          <p className="link-title font-bold text-gray-900">{node.attrs.title}</p>
-          <p className="link text-gray-400 line-clamp-1">{node.attrs.url}</p>
-        </div>
-      </a>
+type LinkPreviewAttrs = {
+  title: string;
+  url: string;
+  target: string;
+  image?: string;
+};
 
-      {node.attrs.image && (
-        <a
-          href={node.attrs.url}
-          target={node.attrs.target}
-          rel="noreferrer"
-          className="basis-1/3 flex-shrink-0 max-w-44">
-          <img className="h-full w-full object-cover object-center" src={node.attrs.image} alt={node.attrs.title} />
+export const LinkPreviewView = ({ node }: NodeViewProps) => {
+  const attrs = node.attrs as LinkPreviewAttrs;
+
+  return (
+    <NodeViewWrapper>
+      <div className="mx-auto overflow-hidden bg-white rounded-lg border border-gray-200 flex flex-row">
+        <a href={attrs.url} target={attrs.target} rel="noreferrer" className="grow flex items-center ">
+          <div className="px-5">
+            <p className="link-title text-base font-bold text-gray-900">{attrs.title}</p>
+            <p className="link text-m text-gray-400">{attrs.url}</p>
+          </div>
         </a>
-      )}
-    </div>
-  </NodeViewWrapper>
-);
+
+        {attrs.image && (
+          <a href={attrs.url} target={attrs.target} rel="noreferrer" className="basis-1/3 shrink-0 max-w-44">
+            <img className="h-full w-full object-cover object-center" src={attrs.image} alt={attrs.title} />
+          </a>
+        )}
+      </div>
+    </NodeViewWrapper>
+  );
+};

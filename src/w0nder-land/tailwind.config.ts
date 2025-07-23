@@ -1,3 +1,6 @@
+/* eslint-disable global-require */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
 import type { Config } from 'tailwindcss';
 import animate from 'tailwindcss-animate';
 

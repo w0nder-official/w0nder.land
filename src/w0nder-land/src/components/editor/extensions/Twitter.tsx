@@ -1,4 +1,4 @@
-import { mergeAttributes, Node, NodeViewWrapper, ReactNodeViewRenderer } from '@tiptap/react';
+import { mergeAttributes, Node, NodeViewProps, NodeViewWrapper, ReactNodeViewRenderer } from '@tiptap/react';
 import { TwitterTweetEmbed } from 'react-twitter-embed';
 
 export const Twitter = Node.create({
@@ -37,10 +37,18 @@ export const Twitter = Node.create({
   },
 });
 
-const TwitterView = ({ node }: { node: { attrs: { tweetId: string } } }) => (
-  <NodeViewWrapper className="react-component">
-    <div>
-      <TwitterTweetEmbed placeholder="Loading" tweetId={node.attrs.tweetId} />
-    </div>
-  </NodeViewWrapper>
-);
+type TwitterAttrs = {
+  tweetId: string;
+};
+
+const TwitterView = ({ node }: NodeViewProps) => {
+  const attrs = node.attrs as TwitterAttrs;
+
+  return (
+    <NodeViewWrapper className="react-component">
+      <div>
+        <TwitterTweetEmbed placeholder="Loading" tweetId={attrs.tweetId} />
+      </div>
+    </NodeViewWrapper>
+  );
+};

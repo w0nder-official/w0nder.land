@@ -1,4 +1,4 @@
-import { mergeAttributes, Node, NodeViewWrapper, ReactNodeViewRenderer } from '@tiptap/react';
+import { mergeAttributes, Node, NodeViewWrapper, ReactNodeViewRenderer, NodeViewProps } from '@tiptap/react';
 
 export const Video = Node.create({
   name: 'video',
@@ -41,14 +41,23 @@ export const Video = Node.create({
   },
 });
 
-const VideoView = ({ node }: { node: { attrs: { title: string; url: string } } }) => (
-  <NodeViewWrapper>
-    <div className="w-full overflow-hidden bg-white rounded-lg  border-2 border-yellow-400">
-      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-      <video controls loop autoPlay className="w-full">
-        <source src={node.attrs.url} type="video/mp4" title={node.attrs.title} />
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </NodeViewWrapper>
-);
+type VideoAttrs = {
+  title: string;
+  url: string;
+};
+
+export const VideoView = ({ node }: NodeViewProps) => {
+  const attrs = node.attrs as VideoAttrs;
+
+  return (
+    <NodeViewWrapper>
+      <div className="w-full overflow-hidden bg-white rounded-lg border border-gray-200">
+        {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+        <video controls loop autoPlay className="w-full">
+          <source src={attrs.url} type="video/mp4" title={attrs.title} />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </NodeViewWrapper>
+  );
+};
