@@ -7,6 +7,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'w0nder.work',
       },
+      {
+        protocol: 'https',
+        hostname: 'w0nder.land',
+      },
     ],
   },
   async redirects() {
