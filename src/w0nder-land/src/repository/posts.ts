@@ -44,16 +44,16 @@ export function getPostByUuid(uuid: string) {
   return {
     type: PostType.Markdown,
     uuid,
-    author: data.author,
-    authorProfile: data.authorProfile,
-    title: data.title,
-    keywords: data.keywords,
+    author: data.author || '',
+    authorProfile: data.authorProfile || '',
+    title: data.title || '',
+    keywords: data.keywords || [],
     article: content,
-    createdAt: data.createdAt,
-    updatedAt: data.updatedAt,
-    url: getPostUrl(uuid, data.title),
-    shortUrl: `/s/${data.shortUrl}`,
-    tags: data.tags,
+    createdAt: data.createdAt || '',
+    updatedAt: data.updatedAt || '',
+    url: getPostUrl(uuid, data.title || ''),
+    shortUrl: `/s/${data.shortUrl || ''}`,
+    tags: data.tags || [],
   } satisfies Post;
 }
 
