@@ -9,12 +9,19 @@ export type HeadContentMetaProps = {
   title: string;
   description: string;
   ogUrl?: string;
+  shortUrl?: string;
   // FIXME: schema-dts의 type을 잘못 사용하고 있다.
   // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   structuredData?: Record<string, any>;
 };
 
-export const HeadContentMeta = ({ title, description, ogUrl: ogUrlProps, structuredData }: HeadContentMetaProps) => {
+export const HeadContentMeta = ({
+  title,
+  description,
+  ogUrl: ogUrlProps,
+  shortUrl,
+  structuredData,
+}: HeadContentMetaProps) => {
   const router = useRouter();
   const pageUrl = `${Configure.ServiceUrl}${router.asPath ?? '/'}`;
   const dynamicOgUrl = `${Configure.ServiceUrl}/api/og/t-001?url=${encodeURIComponent(pageUrl)}`;
@@ -66,6 +73,9 @@ export const HeadContentMeta = ({ title, description, ogUrl: ogUrlProps, structu
       <meta name="keywords" content="programmer, developer, w0nder, w0nder.land, 개발자" />
       <meta name="author" content="w0nder" />
       <meta name="robots" content="ALL" />
+
+      {/* Short URL alternative link */}
+      {shortUrl && <link rel="alternate" href={`${Configure.ServiceUrl}${shortUrl}`} />}
 
       <meta property="og:type" content="website" />
       <meta property="og:title" content={titleWithSite} />

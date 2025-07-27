@@ -2,6 +2,7 @@ import { HeadContentMeta } from '@/components/common/HeadContentMeta';
 import { Share } from '@/components/common/Share';
 import { BlogPostDetail } from '@/components/ui/BlogPostDetail';
 import { BrutalButton } from '@/components/ui/BrutalButton';
+import { Configure } from '@/constants/configure';
 import { ellipsis } from '@/libs/utils/string';
 import { getPostUrl } from '@/libs/utils/urls';
 import { getAllPosts, Post } from '@/repository/posts';
@@ -30,6 +31,13 @@ const PostPage = ({ post }: PostProps) => {
   // 80자 이상이 되면 검색엔진에서 잘 처리해주지 못한다 80자 이상이면 ellipsis 처리를 해준다.
   const title = useMemo(() => ellipsis(post?.title ?? '', 80), [post]);
   const description = useMemo(() => ellipsis(post?.article.replaceAll('\n', ' ') ?? '', 200), [post]);
+
+  const shareUrl = useMemo(() => {
+    if (post?.shortUrl) {
+      return `${Configure.ServiceUrl}${post.shortUrl}`;
+    }
+    return typeof window !== 'undefined' ? window.location.href : '';
+  }, [post?.shortUrl]);
 
   const structuredData: WithContext<BlogPosting> | undefined = useMemo(
     () =>
@@ -87,7 +95,12 @@ const PostPage = ({ post }: PostProps) => {
 
   return (
     <>
-      <HeadContentMeta title={title} description={description} structuredData={structuredData} />
+      <HeadContentMeta
+        title={title}
+        description={description}
+        shortUrl={post.shortUrl}
+        structuredData={structuredData}
+      />
 
       <div className="min-h-screen bg-gray-100">
         {/* 포스트 헤더 */}
@@ -133,7 +146,7 @@ const PostPage = ({ post }: PostProps) => {
         <Share
           title={post.title}
           text={description}
-          url={typeof window !== 'undefined' ? window.location.href : ''}
+          url={shareUrl}
           isOpen={isShareOpen}
           onClose={() => setIsShareOpen(false)}
         />
