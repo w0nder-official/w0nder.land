@@ -1,30 +1,30 @@
 ---
-title: "그 많던 사이드 프로젝트는 다 어디로 갔을까"
-author: "w0nder"
-shortUrl: "side-project-failure"
-authorProfile: "/images/profile_image.jpg"
-keywords: [
-    "사이드 프로젝트",
-    "실패",
-    "성공",
-    "MVP",
-    "피드백",
-    "동력",
-    "흥미",
-    "지속성",
-    "GitHub",
-    "Show Your Time",
-    "낭비 최소화",
-    "스타트업",
-]
-createdAt: "2025-01-25T09:00:00Z"
-updatedAt: "2025-01-25T09:00:00Z"
+title: '그 많던 사이드 프로젝트는 다 어디로 갔을까'
+author: 'w0nder'
+shortUrl: 'side-project-failure'
+authorProfile: '/images/profile_image.jpg'
+category: 'LIFE'
+keywords:
+  [
+    '사이드 프로젝트',
+    '실패',
+    '성공',
+    'MVP',
+    '피드백',
+    '동력',
+    '흥미',
+    '지속성',
+    'GitHub',
+    'Show Your Time',
+    '낭비 최소화',
+    '스타트업',
+  ]
+createdAt: '2025-01-25T09:00:00Z'
+updatedAt: '2025-01-25T09:00:00Z'
 ---
-
 
 <link-preview url="https://speakerdeck.com/w0nder_official/geu-manhdeon-saideu-peurojegteuneun-da-eodiro-gasseulgga" title="그 많던 사이드 프로젝트는 다 어디로 갔을까?" target="_blank" image="https://files.speakerdeck.com/presentations/c6632b76be284d7ca1cef0d5744eef75/preview_slide_0.jpg">
 </link-preview>
-
 
 개발자라면 한 번쯤 사이드 프로젝트를 시작해봤을 것입니다. 그러나 대부분의 프로젝트는 절반도 완성하지 못한 채 GitHub의 저장소에서 잠들어 있죠. 이번 글에서는 사이드 프로젝트가 실패하는 이유와, 이를 성공으로 이끄는 방법에 대해 이야기해보려 합니다.
 
@@ -39,12 +39,12 @@ updatedAt: "2025-01-25T09:00:00Z"
 특히 '낭비 최소화'는 사이드 프로젝트에서 매우 중요합니다. 우리에게는 시간과 에너지가 제한되어 있기 때문입니다. 낭비를 최소화한다는 것은 자원을 효율적으로 사용하고, 불필요한 요소를 제거하는 것입니다. 이것이 바로 MVP의 핵심이기도 합니다. 작게 시작하여 처음부터 모든 기능을 완성하려는 욕심을 버리고, 피드백을 빠르게 받아 잘못된 방향으로의 추가 개발을 방지하며, 기존에 사용 가능한 도구나 라이브러리를 적극 활용해 시간과 노력을 절약해야 합니다.
 
 ![Show Your Time 첫 번째 스탭](/posts/11/assets/first-step.jpg)
-*Show Your Time 첫 번째 스탭*
+_Show Your Time 첫 번째 스탭_
 
 'MVP 중의 MVP'로 시작하는 것이 중요합니다. 크게 상상하되 작게 시작하고, UI나 UX는 완벽하지 않아도 되며, 피드백을 받으려면 동작하는 최소한의 무언가가 필요합니다. 저는 'Show Your Time'이라는 앱을 개발하며 이러한 접근 방식의 효과를 직접 경험했습니다. 처음에는 정말 기본적인 기능만 있는 앱을 만들었습니다. 디자인은 투박했고, 기능도 제한적이었지만, 사용자들에게 보여주고 피드백을 받을 수 있는 상태였죠.
 
 ![Show Your Time 두 번째 스탭](/posts/11/assets/second-step.jpg)
-*Show Your Time 두 번째 스탭*
+_Show Your Time 두 번째 스탭_
 
 MVP를 만든 후에는 작업의 리듬이 중요합니다. 작업 간 핑퐁이 주단위로 이루어져야 하며, 2주 이상 소식이 없으면 프로젝트의 동력이 급격히 떨어집니다. 디자인과 개발이 동시에 진행되고, 주기적인 배포가 가능해야 합니다. 한 사람이 막히면 전체가 막히는 상황은 피해야 하죠. 작업 텀이 길어질수록 팀원 간 연결이 끊기고, 프로젝트는 방치되기 쉽습니다. 짧은 주기의 성과가 동기부여를 만듭니다.
 
@@ -52,9 +52,7 @@ MVP를 만든 후에는 작업의 리듬이 중요합니다. 작업 간 핑퐁�
 
 Show Your Time 앱은 이러한 원칙들을 실제로 적용한 좋은 사례입니다. 본질적인 기능만을 가진 MVP로 시작해 지속적으로 개선해 나갔죠. 자세한 내용은 [INTJ와 INTJ가 2주 만에 만든 Show Your Time 앱 제작기](https://www.nanasan.co.kr/showyourtime-app-story/)에서 확인할 수 있습니다.
 
-
 <link-preview url="https://www.nanasan.co.kr/showyourtime-app-story/" title="INTJ와 INTJ가 2주 만에 만든 Show Your Time 앱 제작기" target="_blank" image="https://www.nanasan.co.kr/static/096e1edb9550b472bf19c0bd199e9fe0/e5166/nanasan.jpg">
 </link-preview>
 
 사이드 프로젝트는 단순히 시간이 남아서 하는 일이 아닙니다. 그것은 우리의 열정과 가능성을 실현하는 기회입니다. 완벽한 계획이나 거창한 시작이 아니라, 작지만 의미 있는 첫걸음을 내딛는 것이 중요합니다. 오늘부터 작은 아이디어라도 바로 실행에 옮겨 보세요. 그리고 그 과정에서 실패를 두려워하지 말고 계속 나아가세요. 여러분의 GitHub에는 잠든 프로젝트가 아니라 세상을 바꿀 무언가가 자리 잡을 것입니다. 지금 바로 시작해보세요.
-

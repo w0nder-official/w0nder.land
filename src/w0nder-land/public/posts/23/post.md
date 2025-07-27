@@ -3,6 +3,7 @@ title: '자격증 하나, 책 한 권'
 author: 'w0nder'
 shortUrl: 'certificate-and-book'
 authorProfile: '/images/profile_image.jpg'
+category: 'LIFE'
 keywords:
   [
     '정보보안기사',

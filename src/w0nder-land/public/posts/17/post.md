@@ -1,17 +1,16 @@
 ---
-title: "필사의 즐거움"
-author: "w0nder"
-shortUrl: "the-pleasure-of-copying"
-authorProfile: "/images/profile_image.jpg"
-keywords: ["필사", "어린왕자", "망상", "상상력", "글쓰기", "독서", "명상", "자기성찰", "창의성", "마음챙김"]
-createdAt: "2025-04-17T09:00:00Z"
-updatedAt: "2025-04-17T09:00:00Z"
+title: '필사의 즐거움'
+author: 'w0nder'
+shortUrl: 'the-pleasure-of-copying'
+authorProfile: '/images/profile_image.jpg'
+category: 'LIFE'
+keywords: ['필사', '어린왕자', '망상', '상상력', '글쓰기', '독서', '명상', '자기성찰', '창의성', '마음챙김']
+createdAt: '2025-04-17T09:00:00Z'
+updatedAt: '2025-04-17T09:00:00Z'
 ---
-
 
 <link-preview url="https://www.instagram.com/walk.0ng/p/DH-VslTTcqM/?img_index=1" title="필사와 함께 찾는 나만의 별" target="_blank" image="/posts/17/assets/post.jpg" >
 </link-preview>
-
 
 어린왕자 필사 모임에 참여했다. 여러 사람들이 모인 자리에서 [운영자](https://www.instagram.com/resonance.library/) 분이 준비해 주신 어린왕자의 일부분을 함께 필사하는 시간이었다. 우리 여섯 명이 하나의 테이블에 둘러앉았다. 그 후 함께 보이차를 마시며 대추 간식을 먹는 편안한 시간을 가졌다. 보이차의 깊은 향과 대추의 달콤한 맛이 어우러져 참 맛있었다. 차를 마신 후에는 짧은 명상을 했다. 눈을 감고 호흡에 집중하는 5분간의 시간이었다. 명상이 끝난 후, 본격적인 필사를 시작했다. 우리에게 주어진 종이는 왼쪽에는 어린왕자의 문장들이, 오른쪽에는 글을 쓸 수 있는 줄이 있는 형태였다.
 

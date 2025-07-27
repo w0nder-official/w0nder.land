@@ -1,11 +1,12 @@
 ---
-title: "ShowYourTime 개발후기"
-author: "w0nder"
-shortUrl: "epilogue"
-authorProfile: "/images/profile_image.jpg"
+title: 'ShowYourTime 개발후기'
+author: 'w0nder'
+shortUrl: 'epilogue'
+authorProfile: '/images/profile_image.jpg'
+category: 'TECH'
 keywords: ['개발', 'ReactNative', 'RN', '카메라', '타임스탬프', 'ShowYourTime']
-createdAt: "2024-01-01T09:00:00Z"
-updatedAt: "2024-01-01T09:00:00Z"
+createdAt: '2024-01-01T09:00:00Z'
+updatedAt: '2024-01-01T09:00:00Z'
 ---
 
 <link-preview url="https://showyourti.me" title="Show Your Time" target="_blank" image="https://www.showyourti.me/images/og.png">
@@ -30,7 +31,7 @@ updatedAt: "2024-01-01T09:00:00Z"
 
 ## 사진에 타임스탬프 넣기
 
-![](/posts/1/assets/fe9af87f16c040ada0139646b8e73641.jpg)   
+![](/posts/1/assets/fe9af87f16c040ada0139646b8e73641.jpg)
 
 이 프로젝트에서 가장 큰 도전은 사진에 타임스탬프를 추가하는 기능이었습니다. 사진에 시간 텍스트를 추가하기 위해 ImageMagic이나 다른 라이브러리의 사용을 고려하였으나, 스타일링에 제한이 많고 React Native에서 ImageMagic 설정에 시간이 소요될것 같았습니다.
 

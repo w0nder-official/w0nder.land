@@ -3,6 +3,7 @@ title: '2025년 반년 회고'
 author: 'w0nder'
 shortUrl: '2025-half-year-retrospect'
 authorProfile: '/images/profile_image.jpg'
+category: 'LIFE'
 keywords:
   ['회고', '2025년', '반년', '사업', 'AI도서', '겸임교수', 'SaaS', 'Checkable', '대표', '개발자', '정체성', '고민']
 createdAt: '2025-06-29T09:00:00Z'

@@ -3,6 +3,7 @@ title: '단단한 사람'
 author: 'w0nder'
 shortUrl: 'finding-my-strength'
 authorProfile: '/images/profile_image.jpg'
+category: 'LIFE'
 keywords:
   [
     '멘토링',

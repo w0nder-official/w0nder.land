@@ -1,32 +1,35 @@
 ---
-title: "레드닷(Red Dot)으로 기록탭 인지 시키기"
-author: "w0nder"
-shortUrl: "red-dot"
-authorProfile: "/images/profile_image.jpg"
-keywords: [
-  'ShowYourTime',
-  'Record tab',
-  'Little Red Dot experiment',
-  'UI/UX design',
-  'A/B testing',
-  'Daily Active Users (DAU)',
-  'Click-through rate (CTR)',
-  'User experience (UX)',
-  'User interface (UI)',
-  'User engagement',
-  '기록탭',
-  '레드닷 실험',
-  'UI/UX 디자인',
-  'A/B 테스트',
-  '일일 활성 사용자 (DAU)',
-  '클릭률 (CTR)',
-  '사용자 경험 (UX)',
-  '사용자 인터페이스 (UI)',
-  '사용자 참여'
-]
-createdAt: "2024-05-06T09:00:00Z"
-updatedAt: "2024-05-06T09:00:00Z"
+title: '레드닷(Red Dot)으로 기록탭 인지 시키기'
+author: 'w0nder'
+shortUrl: 'red-dot'
+authorProfile: '/images/profile_image.jpg'
+category: 'DESIGN'
+keywords:
+  [
+    'ShowYourTime',
+    'Record tab',
+    'Little Red Dot experiment',
+    'UI/UX design',
+    'A/B testing',
+    'Daily Active Users (DAU)',
+    'Click-through rate (CTR)',
+    'User experience (UX)',
+    'User interface (UI)',
+    'User engagement',
+    '기록탭',
+    '레드닷 실험',
+    'UI/UX 디자인',
+    'A/B 테스트',
+    '일일 활성 사용자 (DAU)',
+    '클릭률 (CTR)',
+    '사용자 경험 (UX)',
+    '사용자 인터페이스 (UI)',
+    '사용자 참여',
+  ]
+createdAt: '2024-05-06T09:00:00Z'
+updatedAt: '2024-05-06T09:00:00Z'
 ---
+
 안녕하세요, ShowYourTime 앱 개발자입니다. 이번 글에서는 ShowYourTime 앱의 기록탭 활성화를 위해 진행한 `레드닷(Red Dot)` 실험에 대해 공유하고자 합니다.
 
 # ShowYourTime 앱과 기록탭의 중요성
@@ -41,14 +44,14 @@ ShowYourTime 앱은 단순한 타임스탬프 기능 이상으로, 사용자들�
 특히 두 번째 문제점은 사용자 테스트(UT)를 통해 더욱 명확해졌는데, 심지어 IT 종사자인 디자이너조차 앱 하단에 탭이 있는지 모르는 경우가 있었습니다. 블랙 테마로 인해 탭이 눈에 잘 띄지 않는 것이 주된 원인으로 보였지만, 이 정도일 거라고는 예상하지 못했던 충격적인 발견이었습니다.
 
 ![레드닷 UI - 여기를 눌러보시겠습니까?](/posts/3/assets/red-dot-ui.png)
-*레드닷 UI - 여기를 눌러보시겠습니까?*
+_레드닷 UI - 여기를 눌러보시겠습니까?_
 
 이에 따라 저희 팀은 리소스가 부족한 상황에서도 기록탭을 효과적으로 인지시킬 수 있는 방안을 모색하게 되었습니다. 그 결과 UI/UX를 크게 변경하지 않으면서도 사용자의 시선을 끌 수 있는 레드닷을 기록탭에 추가하는 아이디어를 떠올리게 되었습니다.
 
 # 레드닷으로 기록탭 사용이 늘어났을까?
 
 ![3개월간의 전체 DAU 와 기록탭 DAU](/posts/3/assets/dau-graph.png)
-*3개월간의 전체 DAU 와 기록탭 DAU*
+_3개월간의 전체 DAU 와 기록탭 DAU_
 
 2.3.0 버전(2024-04-08)에서 기록탭에 레드닷을 적용하고, 그 효과를 분석해보았습니다. 레드닷 추가 전후의 기록탭 일일 활성 사용자(DAU) 추이를 살펴본 결과, 당초 기대했던 것과는 다소 다른 양상을 보였습니다.
 
@@ -57,7 +60,7 @@ ShowYourTime 앱은 단순한 타임스탬프 기능 이상으로, 사용자들�
 # 레드닷을 얼마나 눌렀을까?
 
 ![사람들은 얼마나 레드닷을 누를까?](/posts/3/assets/click-red-dot-graph.png)
-*사람들은 얼마나 레드닷을 누를까?*
+_사람들은 얼마나 레드닷을 누를까?_
 
 레드닷 실험 결과를 분석해 보면, 전체 사용자 782명 중 약 60%인 431명이 레드닷을 클릭하여 기록탭의 존재를 인지하게 되었습니다. 이는 절반 이상의 사용자가 레드닷에 반응했다는 점에서 주목할 만한 결과입니다. 하지만 레드닷의 클릭률이 인스타그램 공유 버튼의 클릭률(17%)과 비교하면 상대적으로 높아 보일 수 있지만, 사용자의 주의를 환기시키고자 했던 레드닷의 목적을 고려할 때 60%의 클릭률이 충분히 만족스러운 수준인지는 의문의 여지가 있습니다.
 

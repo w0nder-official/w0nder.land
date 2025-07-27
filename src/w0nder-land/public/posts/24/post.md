@@ -3,6 +3,7 @@ title: '구글 지도가 없는 도시에서'
 author: 'w0nder'
 shortUrl: 'qingdao-cafe-moment'
 authorProfile: '/images/profile_image.jpg'
+category: 'LIFE'
 keywords: ['칭다오', '여행', '카페', '선택', '성찰', '여행기']
 createdAt: '2025-06-08T09:00:00Z'
 updatedAt: '2025-06-08T10:30:00Z'

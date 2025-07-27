@@ -1,11 +1,12 @@
 ---
-title: "거절의 미학"
-author: "w0nder"
-shortUrl: "the-art-of-saying-no"
-authorProfile: "/images/profile_image.jpg"
-keywords: ["거절", "심리", "인간관계", "경계설정", "자존감", "감정관리", "성찰", "자기수용", "성숙", "인생관"]
-createdAt: "2025-04-13T09:00:00Z"
-updatedAt: "2025-04-13T09:00:00Z"
+title: '거절의 미학'
+author: 'w0nder'
+shortUrl: 'the-art-of-saying-no'
+authorProfile: '/images/profile_image.jpg'
+category: 'LIFE'
+keywords: ['거절', '심리', '인간관계', '경계설정', '자존감', '감정관리', '성찰', '자기수용', '성숙', '인생관']
+createdAt: '2025-04-13T09:00:00Z'
+updatedAt: '2025-04-13T09:00:00Z'
 ---
 
 거절은 우리 삶의 일부분이다. 출근길 지하철 출구에서 건네받는 전단지를 거절하는 사소한 순간부터 인생의 중대한 갈림길에서 내리는 결정까지, 우리는 매일 선택과 거절의 순간을 마주한다.

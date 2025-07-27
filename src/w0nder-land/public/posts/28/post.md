@@ -3,6 +3,7 @@ title: '경험주의자의 선택'
 author: 'w0nder'
 shortUrl: 'mentoring-experience'
 authorProfile: '/images/profile_image.jpg'
+category: 'LIFE'
 keywords: ['경험', '멘토링', '강의', '자기성장', '창업']
 createdAt: '2025-07-06T09:00:00Z'
 updatedAt: '2025-07-06T10:30:00Z'

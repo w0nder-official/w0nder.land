@@ -1,20 +1,41 @@
 ---
-title: "ShowYourTime 앱 트래픽 10배 증가 사례: 간단한 ASO 전략으로 성공하기"
-author: "w0nder"
-shortUrl: "aso"
-authorProfile: "/images/profile_image.jpg"
-keywords: ['ASO', 'app store search optimization', 'ShowYourTime', '앱', '트래픽', 'traffic', '검색', 'seo', '앱스토어', 'appstore', '플레이스토어', 'googleplaystore', 'appstoreoptimization', '앱스토어최적화', '인증', '타임스탬프', 'timestamp', '앱개발']
-createdAt: "2024-03-02T22:10:00Z"
-updatedAt: "2024-03-02T22:10:00Z"
+title: 'ShowYourTime 앱 트래픽 10배 증가 사례: 간단한 ASO 전략으로 성공하기'
+author: 'w0nder'
+shortUrl: 'aso'
+authorProfile: '/images/profile_image.jpg'
+category: 'BUSINESS'
+keywords:
+  [
+    'ASO',
+    'app store search optimization',
+    'ShowYourTime',
+    '앱',
+    '트래픽',
+    'traffic',
+    '검색',
+    'seo',
+    '앱스토어',
+    'appstore',
+    '플레이스토어',
+    'googleplaystore',
+    'appstoreoptimization',
+    '앱스토어최적화',
+    '인증',
+    '타임스탬프',
+    'timestamp',
+    '앱개발',
+  ]
+createdAt: '2024-03-02T22:10:00Z'
+updatedAt: '2024-03-02T22:10:00Z'
 ---
 
 ![ASO 를 적용하고 앱스토어 순위 199위 등극!](/posts/2/assets/rank_chart.png)
-*ASO 를 적용하고 앱스토어 순위 199위 등극!*
+_ASO 를 적용하고 앱스토어 순위 199위 등극!_
 
 현대 디지털 시대에 모바일 앱 시장은 전례 없는 성장세를 보이고 있습니다. Google Play 스토어와 Apple의 App Store에는 수백만 개의 앱이 존재하며, 사용자들의 관심을 얻기 위한 경쟁은 이전보다 더욱 치열해졌습니다. 이런 배경 속에서, `ShowYourTime` 앱도 출시 초기에는 유입량이 저조한 문제에 부딪혔습니다. `ShowYourTime`은 사용자의 노력을 담은 인증샷을 더욱 돋보이게 만들어주는 앱입니다. 하지만 우수한 기능과 사용자 친화적 인터페이스에도 불구하고, 앱의 가시성 부족으로 많은 잠재 사용자들에게 도달하지 못했습니다. 앱을 사용해본 사용자들은 긍정적인 리뷰를 남기며 만족을 표현했으나, 하루 평균 다운로드 수는 3~4회에 그쳤습니다. 이는 분명히 아쉬운 상황이었습니다.
 
 ![ShowYourTime 대한 사랑이 듬북담긴 의견](/posts/2/assets/review.png)
-*ShowYourTime 대한 사랑이 듬북담긴 의견*
+_ShowYourTime 대한 사랑이 듬북담긴 의견_
 
 # 앱을 더 알릴수 있도록 해보자!
 
@@ -31,17 +52,16 @@ updatedAt: "2024-03-02T22:10:00Z"
 # 어떤 부분에서 효과가 있었을까?
 
 ![검색 목록 노출 수](/posts/2/assets/chart_impressions.png)
-*검색 목록 노출 수*
+_검색 목록 노출 수_
 
 ![앱 상세 페이지 접근 수](/posts/2/assets/chart_product_page_view.png)
-*앱 상세 페이지 접근 수*
+_앱 상세 페이지 접근 수_
 
 ![앱 다운로드 수](/posts/2/assets/chart_downloads.png)
-*앱 다운로드 수*
+_앱 다운로드 수_
 
 ![검색 목록에서 노출되고 다운로드까지 이어진 전환율](/posts/2/assets/chart_conversion.png)
-*검색 목록에서 노출되고 다운로드까지 이어진 전환율*
-
+_검색 목록에서 노출되고 다운로드까지 이어진 전환율_
 
 ASO 전략을 개선한 후, 앱스토어의 주요 지표들에 대해 분석해 보았습니다.
 
@@ -56,7 +76,6 @@ ASO 전략을 개선한 후, 앱스토어의 주요 지표들에 대해 분석�
 `ShowYourTime` 앱에 적용한 ASO 전략은 앱의 다운로드 수를 기존 대비 10배 증가시키는 인상적인 결과를 가져왔습니다. ASO가 모바일 앱 성공에 결정적인 역할을 할 수 있음을 보여주었습니다. 특히, 앱 이름과 설명에 키워드를 적절히 포함시키고, 앱 스토어의 첫 이미지를 최적화하는 것이 검색 노출율을 높이는 데 매우 효과적임을 확인했습니다.
 
 앞으로는 검색 페이지에서 우리 앱의 노출 빈도를 지속적으로 증가시키고, 노출이 성공적으로 이루어졌을 때 사용자가 앱의 상세 페이지로 이동하도록 유도하는 전략을 강화하는 데 집중할 예정입니다.
-
 
 <link-preview url="https://showyourti.me" title="Show Your Time" target="_blank" image="https://www.showyourti.me/images/og.png">
 </link-preview>

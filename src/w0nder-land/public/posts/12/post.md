@@ -1,33 +1,34 @@
 ---
-title: "창백한 푸른 점 위에서"
-author: "w0nder"
-shortUrl: "starry-sky"
-authorProfile: "/images/profile_image.jpg"
-keywords: [
-    "코스모스",
-    "우주",
-    "천문학",
-    "우주적관점",
-    "일상성찰",
-    "배려",
-    "코스모스",
-    "개발자일상",
-    "SNS",
-    "공유정신",
-    "관계",
-    "여유",
-    "삶의태도",
-    "손해보기",
-    "함께살기",
-    "창백한푸른점",
-    "개발커뮤니티",
-    "배려하는삶",
-    "일상의깨달음",
-]
-createdAt: "2025-02-09T09:00:00Z"
-updatedAt: "2025-02-09T09:00:00Z"
+title: '창백한 푸른 점 위에서'
+author: 'w0nder'
+shortUrl: 'starry-sky'
+authorProfile: '/images/profile_image.jpg'
+category: 'LIFE'
+keywords:
+  [
+    '코스모스',
+    '우주',
+    '천문학',
+    '우주적관점',
+    '일상성찰',
+    '배려',
+    '코스모스',
+    '개발자일상',
+    'SNS',
+    '공유정신',
+    '관계',
+    '여유',
+    '삶의태도',
+    '손해보기',
+    '함께살기',
+    '창백한푸른점',
+    '개발커뮤니티',
+    '배려하는삶',
+    '일상의깨달음',
+  ]
+createdAt: '2025-02-09T09:00:00Z'
+updatedAt: '2025-02-09T09:00:00Z'
 ---
-
 
 <link-preview url="https://ridibooks.com/books/786000077" title="코스모스" target="_blank" image="https://img.ridicdn.net/cover/786000077">
 </link-preview>

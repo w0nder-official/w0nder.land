@@ -3,6 +3,7 @@ title: 'react-native-app-auth - Data intent is null 이슈 해결'
 author: 'w0nder'
 shortUrl: 'react-native-app-auth-data-intent-null'
 authorProfile: '/images/profile_image.jpg'
+category: 'TECH'
 keywords:
   [
     'React Native',

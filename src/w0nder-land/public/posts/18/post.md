@@ -3,6 +3,7 @@ title: '사이드킥 후기'
 author: 'w0nder'
 shortUrl: 'sidekick-review'
 authorProfile: '/images/profile_image.jpg'
+category: 'LIFE'
 keywords:
   [
     '사이드킥',

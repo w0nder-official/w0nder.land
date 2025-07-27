@@ -1,12 +1,12 @@
+import { ImageNode } from '@/components/editor/extensions/ImageNode';
+import { LinkPreview } from '@/components/editor/extensions/LinkPreview';
+import { Twitter } from '@/components/editor/extensions/Twitter';
+import { Video } from '@/components/editor/extensions/Video';
+import Link from '@tiptap/extension-link';
 import type { Editor as TipTapEditor } from '@tiptap/react';
 import { EditorContent, JSONContent, useEditor } from '@tiptap/react';
 import { StarterKit } from '@tiptap/starter-kit';
-import { ImageNode } from '@/components/editor/extensions/ImageNode';
-import { LinkPreview } from '@/components/editor/extensions/LinkPreview';
-import Link from '@tiptap/extension-link';
 import { Markdown } from 'tiptap-markdown';
-import { Video } from '@/components/editor/extensions/Video';
-import { Twitter } from '@/components/editor/extensions/Twitter';
 
 export type EditorProps = {
   content: JSONContent | string;
@@ -244,7 +244,21 @@ export const Editor = ({ content, editable, onChange }: EditorProps) => {
   return (
     <div className="h-full flex-grow flex flex-col justify-between">
       {editable && editor && <MenuBar editor={editor} />}
-      <EditorContent editor={editor} className="overflow-y-auto flex-grow" />
+      <EditorContent
+        editor={editor}
+        className="overflow-y-auto flex-grow prose prose-lg max-w-none
+          prose-headings:text-black prose-headings:font-black
+          prose-p:text-black prose-p:leading-relaxed prose-p:text-xl
+          prose-strong:text-black prose-strong:font-black
+          prose-em:text-black prose-em:italic
+          prose-code:text-black prose-code:bg-gray-200 prose-code:px-1 prose-code:py-0.5 prose-code:rounded
+          prose-pre:bg-gray-100 prose-pre:text-black
+          prose-blockquote:text-gray-700 prose-blockquote:border-l-4 prose-blockquote:border-black prose-blockquote:pl-4
+          prose-ul:text-black prose-ol:text-black
+          prose-li:text-black
+          prose-a:text-emerald-600 prose-a:underline
+          prose-img:rounded-lg prose-img:shadow-lg"
+      />
     </div>
   );
 };

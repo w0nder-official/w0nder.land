@@ -3,6 +3,7 @@ title: '보드리야르가 ChatGPT를 만났다면'
 author: 'w0nder'
 shortUrl: 'baudrillard-meets-chatgpt'
 authorProfile: '/images/profile_image.jpg'
+category: 'LIFE'
 keywords:
   [
     '보드리야르',

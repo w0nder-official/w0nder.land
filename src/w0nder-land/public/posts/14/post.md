@@ -1,24 +1,26 @@
 ---
-title: "커피챗 1년 후기"
-author: "w0nder"
-shortUrl: "coffee-chat-1-year-review"
-authorProfile: "/images/profile_image.jpg"
-keywords: [
-    "커피챗",
-    "1년 후기",
-    "커피챗 후기",
-    "개발자 커피챗",
-    "주니어 개발자 멘토링",
-    "개발자 이력서 첨삭",
-    "커리어 상담",
-    "개발자 네트워킹",
-    "테크 커뮤니티",
-    "개발자 성장",
-    "비전공자 개발자",
-    "개발자 브랜딩",
-]
-createdAt: "2025-02-16T09:00:00Z"
-updatedAt: "2025-02-16T09:00:00Z"
+title: '커피챗 1년 후기'
+author: 'w0nder'
+shortUrl: 'coffee-chat-1-year-review'
+authorProfile: '/images/profile_image.jpg'
+category: 'LIFE'
+keywords:
+  [
+    '커피챗',
+    '1년 후기',
+    '커피챗 후기',
+    '개발자 커피챗',
+    '주니어 개발자 멘토링',
+    '개발자 이력서 첨삭',
+    '커리어 상담',
+    '개발자 네트워킹',
+    '테크 커뮤니티',
+    '개발자 성장',
+    '비전공자 개발자',
+    '개발자 브랜딩',
+  ]
+createdAt: '2025-02-16T09:00:00Z'
+updatedAt: '2025-02-16T09:00:00Z'
 ---
 
 <link-preview url="https://tally.so/r/3jGqZa" title="커피챗 신청하기" target="_blank">
@@ -81,7 +83,6 @@ updatedAt: "2025-02-16T09:00:00Z"
 1년간의 커피챗은 나에게도 큰 배움의 시간이었다. 각자의 고민을 듣고, 해결책을 함께 찾아가는 과정에서 나도 성장했다. 때로는 내 조언이 부족할 때도 있었고, 더 깊이 있는 대화를 나누지 못해 아쉬울 때도 있었다. 하지만 그런 순간들도 모두 의미 있는 경험이었다.
 
 앞으로도 커피챗을 계속할 것이다. 더 많은 개발자들과 만나고, 더 다양한 이야기를 나누고 싶다. 그들의 고민에 귀 기울이고, 내 경험을 나누며, 함께 성장해나가고 싶다. 누군가에게는 위로가 되고, 누군가에게는 동기부여가 되며, 또 누군가에게는 구체적인 방향을 제시해줄 수 있는 사람이 되고 싶다.
-
 
 <link-preview url="https://tally.so/r/3jGqZa" title="커피챗 신청하기" target="_blank">
 </link-preview>

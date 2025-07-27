@@ -12,6 +12,7 @@ interface BasePost {
   shortUrl: string;
   title: string;
   tags: string[];
+  category?: string;
   author: string;
   authorProfile: string;
   keywords: string[];
@@ -48,6 +49,7 @@ export function getPostByUuid(uuid: string) {
     authorProfile: data.authorProfile || '',
     title: data.title || '',
     keywords: data.keywords || [],
+    category: data.category || '',
     article: content,
     createdAt: data.createdAt || '',
     updatedAt: data.updatedAt || '',

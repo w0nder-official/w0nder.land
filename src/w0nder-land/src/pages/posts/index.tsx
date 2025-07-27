@@ -1,9 +1,12 @@
-import { Nav } from '@/components/common/Nav';
-import { DefaultLayout } from '@/components/layouts/DefaultLayout';
+import { getTexts } from '@/components/editor/utils';
+import { BlogCard } from '@/components/ui/BlogCard';
+import { BrutalButton } from '@/components/ui/BrutalButton';
+import { generateCategories, getCategoryColor, getCategoryName } from '@/libs/utils/category';
 import { getAllPosts, Post } from '@/repository/posts';
 import { DateTime } from 'luxon';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
+import { useState } from 'react';
 
 function getReadTime(content: string) {
   const charsPerMinute = 400; // 한글 기준 1분에 400자
@@ -16,36 +19,93 @@ type PostsProps = {
   posts: Post[];
 };
 
-const PostsPage = ({ posts }: PostsProps) => (
-  <DefaultLayout>
-    <Nav title="Posts" leftUrl="/" />
+const PostsPage = ({ posts }: PostsProps) => {
+  const [selectedCategory, setSelectedCategory] = useState('ALL');
 
-    <ul className="flex flex-col">
-      {posts.map((post, idx) => (
-        <Link href={post.url} key={post.uuid}>
-          <li
-            className={`p-5 flex flex-col gap-2 border-b-4 border-black ${idx % 2 === 0 ? 'bg-amber-50' : 'bg-white'}`}>
-            <h3 className="text-3xl font-black text-black mr-2 line-clamp-2">{post.title}</h3>
+  // 동적으로 카테고리 생성
+  const categories = generateCategories(posts);
 
-            <ul className="flex flex-row gap-2">
-              {post.tags?.map(tag => (
-                <li key={tag} className="text-2xl bg-black text-white px-2 py-1 font-black">
-                  {tag}
-                </li>
-              ))}
-            </ul>
+  const filteredPosts =
+    selectedCategory === 'ALL'
+      ? posts
+      : posts.filter(post => getCategoryName(post.category || '', post.tags) === selectedCategory);
 
-            <div className="flex items-center space-x-3 text-xl font-bold text-gray-700">
-              <span>{getReadTime(post.article)}</span>
-              <span>•</span>
-              <span>{DateTime.fromISO(post.createdAt).toFormat('yyyy.MM.dd')}</span>
-            </div>
-          </li>
-        </Link>
-      ))}
-    </ul>
-  </DefaultLayout>
-);
+  return (
+    <div className="min-h-screen bg-gray-100">
+      {/* 블로그 헤더 */}
+      <header className="border-b-4 border-black bg-white p-4 md:p-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-center justify-between">
+            <Link href="/">
+              <BrutalButton className="px-4 py-2 hover:bg-yellow-400">← HOME</BrutalButton>
+            </Link>
+          </div>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="max-w-6xl mx-auto px-4 md:px-6 py-12">
+        {/* Header */}
+        <div className="mb-12 text-center">
+          <h2 className="text-4xl font-black text-black mb-4">POSTS</h2>
+          <div className="w-32 h-1 bg-black mx-auto" />
+        </div>
+
+        {/* Category Filter */}
+        <div className="mb-12">
+          <div className="flex flex-wrap justify-center gap-3">
+            {categories.map(category => (
+              <BrutalButton
+                key={category.name}
+                onClick={() => setSelectedCategory(category.name)}
+                className={`${category.color} px-6 py-2 font-black text-base ${
+                  selectedCategory === category.name
+                    ? 'shadow-[1px_1px_0px_0px_#000] translate-x-[1px] translate-y-[1px]'
+                    : ''
+                }`}>
+                {category.name}
+              </BrutalButton>
+            ))}
+          </div>
+        </div>
+
+        {/* Blog Posts Grid - 모바일 1열, PC 2열 */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          {filteredPosts.map(post => {
+            const textContent = getTexts(post.article);
+            const excerpt = `${textContent.replace(/\n\n/g, ' ').substring(0, 150)}...`;
+
+            return (
+              <Link href={post.url} key={post.uuid}>
+                <BlogCard
+                  title={post.title}
+                  content={post.article}
+                  excerpt={excerpt}
+                  date={DateTime.fromISO(post.createdAt).toFormat('MMM dd').toUpperCase()}
+                  readTime={getReadTime(post.article)}
+                  category={getCategoryName(post.category || '', post.tags)}
+                  accentColor={getCategoryColor(post.category || '', post.tags)}
+                />
+              </Link>
+            );
+          })}
+        </div>
+
+        {/* Load More Button */}
+        {/* <div className="text-center">
+          <BrutalButton className="px-8 py-4 font-black">
+            LOAD MORE POSTS
+          </BrutalButton>
+        </div> */}
+      </main>
+
+      {/* 푸터 */}
+      <footer className="max-w-6xl mx-auto px-4 md:px-6 text-center py-12">
+        <p className="text-gray-600 font-black text-sm">© {new Date().getFullYear()} w0nder</p>
+      </footer>
+    </div>
+  );
+};
 
 export default PostsPage;
 

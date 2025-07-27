@@ -3,6 +3,7 @@ title: '일본 여행을 다녀왔습니다.'
 author: 'w0nder'
 shortUrl: 'japan-trip-and-thoughts'
 authorProfile: '/images/profile_image.jpg'
+category: 'LIFE'
 keywords: ['일본여행', '사색', '관찰', '사업', '자기성찰', '고민', '성장']
 createdAt: '2025-05-18T09:00:00Z'
 updatedAt: '2025-05-18T09:00:00Z'

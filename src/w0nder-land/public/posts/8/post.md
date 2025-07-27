@@ -1,21 +1,16 @@
 ---
-title: "2025년 만다라트"
-author: "w0nder"
-shortUrl: "2025-mandarat"
-authorProfile: "/images/profile_image.jpg"
-keywords: [
-  "만다라트",
-  "2025년",
-  "만다라트 2025",
-  "만다라트 2025년",
-  "신년 계획",
-]
-createdAt: "2024-12-31T09:00:00Z"
-updatedAt: "2024-12-31T09:00:00Z"
+title: '2025년 만다라트'
+author: 'w0nder'
+shortUrl: '2025-mandarat'
+authorProfile: '/images/profile_image.jpg'
+category: 'PLAN'
+keywords: ['만다라트', '2025년', '만다라트 2025', '만다라트 2025년', '신년 계획']
+createdAt: '2024-12-31T09:00:00Z'
+updatedAt: '2024-12-31T09:00:00Z'
 ---
 
 ![2025년 만다라트](/posts/8/assets/2025-mandarat.png)
-*2025년 만다라트*
+_2025년 만다라트_
 
 # 2025년을 위한 나만의 만다라트 계획
 

@@ -1,10 +1,9 @@
+import { Configure } from '@/constants/configure';
+import { beUnique } from '@/libs/utils/array';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useMemo } from 'react';
 import { Organization, Person, WebSite, WithContext } from 'schema-dts';
-import { TwitterLink } from '@/constants/common';
-import { beUnique } from '@/libs/utils/array';
-import { Configure } from '@/constants/configure';
 
 export type HeadContentMetaProps = {
   title: string;
@@ -55,7 +54,6 @@ export const HeadContentMeta = ({ title, description, ogUrl: ogUrlProps, structu
           '@type': 'Organization',
           url: Configure.ServiceUrl,
           logo: `${Configure.ServiceUrl}/images/og.png`,
-          sameAs: [TwitterLink],
         } satisfies WithContext<Organization>,
       ]),
     };

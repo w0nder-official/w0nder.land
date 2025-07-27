@@ -3,6 +3,7 @@ title: '"NO완벽" 개발기'
 author: 'w0nder'
 shortUrl: 'no-perfect-dev'
 authorProfile: '/images/profile_image.jpg'
+category: 'TECH'
 keywords: ['완벽주의', '개발일지', 'Satori', 'Canvas', 'Vercel', '이미지생성', '웹개발', 'vercel/og', 'NO완벽']
 createdAt: '2025-06-15T09:00:00Z'
 updatedAt: '2025-06-15T10:30:00Z'

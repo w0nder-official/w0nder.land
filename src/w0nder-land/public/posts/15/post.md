@@ -1,12 +1,14 @@
 ---
-title: "모닝페이지, 나를 만나는 시간"
-author: "w0nder"
-shortUrl: "morning-page"
-authorProfile: "/images/profile_image.jpg"
-keywords: ["모닝페이지", "글쓰기", "일기", "습관", "자기계발", "아침루틴", "내면탐구", "성장", "챌린지", "마음정리"]
-createdAt: "2025-03-07T09:00:00Z"
-updatedAt: "2025-03-07T09:00:00Z"
+title: '모닝페이지, 나를 만나는 시간'
+author: 'w0nder'
+shortUrl: 'morning-page'
+authorProfile: '/images/profile_image.jpg'
+category: 'LIFE'
+keywords: ['모닝페이지', '글쓰기', '일기', '습관', '자기계발', '아침루틴', '내면탐구', '성장', '챌린지', '마음정리']
+createdAt: '2025-03-07T09:00:00Z'
+updatedAt: '2025-03-07T09:00:00Z'
 ---
+
 올해 초부터 시작한 '모닝페이지'가 어느덧 일상이 되었다. 처음에는 단순한 글쓰기 챌린지였지만, 지금은 삶에 고요한 안정감을 더하는 소중한 습관으로 자리 잡았다.
 
 2025년 1월, 새해 첫날부터 모닝페이지 챌린지에 참여했다. 사실 나는 일기와는 거리가 먼 사람이었다.

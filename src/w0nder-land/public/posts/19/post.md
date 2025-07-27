@@ -3,6 +3,7 @@ title: '콩트가 시작된다.'
 author: 'w0nder'
 shortUrl: 'konto-start'
 authorProfile: '/images/profile_image.jpg'
+category: 'LIFE'
 keywords:
   [
     '콩트가 시작된다',

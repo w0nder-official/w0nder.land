@@ -3,6 +3,7 @@ title: '목소리만 큰 할아버지가 되지 않기 위해'
 author: 'w0nder'
 shortUrl: 'voice-of-humility'
 authorProfile: '/images/profile_image.jpg'
+category: 'LIFE'
 keywords:
   ['소통', '대화', '자기성찰', '확신', '겸손', '관계', '경청', '공감', '헌터헌터', '곤', '자기인식', '성장', '태도']
 createdAt: '2025-07-27T09:00:00Z'

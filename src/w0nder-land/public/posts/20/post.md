@@ -3,6 +3,7 @@ title: '어디에 살고 싶으세요'
 author: 'w0nder'
 shortUrl: 'where-to-live'
 authorProfile: '/images/profile_image.jpg'
+category: 'LIFE'
 keywords:
   ['자유', '정착', '삶의 방향성', '자기성찰', '삶의 의미', '독립', '자아실현', '삶의 선택', '자기발견', '삶의 변화']
 createdAt: '2025-05-10T09:00:00Z'

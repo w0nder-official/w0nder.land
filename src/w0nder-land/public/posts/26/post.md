@@ -3,6 +3,7 @@ title: '책방(1)'
 author: 'w0nder'
 shortUrl: 'bookstore-1'
 authorProfile: '/images/profile_image.jpg'
+category: 'LIFE'
 keywords: ['책방', '서점', '창업', '큐레이션', '오프라인', '개발자']
 createdAt: '2025-06-22T09:00:00Z'
 updatedAt: '2025-06-22T10:30:00Z'

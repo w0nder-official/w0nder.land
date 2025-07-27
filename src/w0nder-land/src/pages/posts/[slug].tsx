@@ -1,18 +1,23 @@
 import { HeadContentMeta } from '@/components/common/HeadContentMeta';
-import { Nav } from '@/components/common/Nav';
 import { Share } from '@/components/common/Share';
-import { Editor } from '@/components/editor/Editor';
-import { getTexts } from '@/components/editor/utils';
-import { DefaultLayout } from '@/components/layouts/DefaultLayout';
-import { Configure } from '@/constants/configure';
-import { ShareIcon } from '@/icons/ShareIcon';
+import { BlogPostDetail } from '@/components/ui/BlogPostDetail';
+import { BrutalButton } from '@/components/ui/BrutalButton';
 import { ellipsis } from '@/libs/utils/string';
 import { getPostUrl } from '@/libs/utils/urls';
 import { getAllPosts, Post } from '@/repository/posts';
 import { DateTime } from 'luxon';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { useCallback, useMemo, useState } from 'react';
+import Link from 'next/link';
+import { useMemo, useState } from 'react';
 import type { BlogPosting, WithContext } from 'schema-dts';
+import { getCategoryColor, getCategoryName } from '@/libs/utils/category';
+
+function getReadTime(content: string) {
+  const charsPerMinute = 400; // 한글 기준 1분에 400자
+  const { length } = content.replace(/\s/g, ''); // 공백 제외 글자수
+  const minutes = Math.max(1, Math.ceil(length / charsPerMinute));
+  return `${minutes}분`;
+}
 
 type PostProps = {
   post: Post;
@@ -20,13 +25,11 @@ type PostProps = {
 
 const PostPage = ({ post }: PostProps) => {
   const [isShareOpen, setIsShareOpen] = useState(false);
-
   const postCreatedAt = useMemo(() => post && DateTime.fromISO(post.createdAt), [post]);
 
   // 80자 이상이 되면 검색엔진에서 잘 처리해주지 못한다 80자 이상이면 ellipsis 처리를 해준다.
-  const text = useMemo(() => getTexts(post?.article ?? []), [post]);
   const title = useMemo(() => ellipsis(post?.title ?? '', 80), [post]);
-  const description = useMemo(() => ellipsis(text.replaceAll('\n', ' ') ?? '', 200), [text]);
+  const description = useMemo(() => ellipsis(post?.article.replaceAll('\n', ' ') ?? '', 200), [post]);
 
   const structuredData: WithContext<BlogPosting> | undefined = useMemo(
     () =>
@@ -36,71 +39,105 @@ const PostPage = ({ post }: PostProps) => {
             '@type': 'BlogPosting',
             headline: title,
             name: title,
-            wordCount: text.length,
+            wordCount: post.article.length,
             keywords: ['developer', 'programming', 'w0nder', 'w0nder.land'],
             description,
             dateCreated: DateTime.fromISO(post.createdAt).startOf('second').toISO() ?? undefined,
             dateModified: DateTime.fromISO(post.updatedAt).startOf('second').toISO() ?? undefined,
           }
         : undefined,
-    [description, post, text.length, title],
+    [description, post, title],
   );
-
-  const handleShareOpen = useCallback(() => {
-    setIsShareOpen(true);
-  }, []);
-
-  const handleShareClose = useCallback(() => {
-    setIsShareOpen(false);
-  }, []);
 
   if (!post) {
     return (
-      <DefaultLayout>
-        <Nav title="Posts" leftUrl="/posts" />
+      <div className="min-h-screen bg-gray-100">
+        {/* 포스트 헤더 */}
+        <header className="border-b-4 border-black bg-white p-4 md:p-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex items-center justify-between">
+              <div className="flex gap-4">
+                <Link href="/posts">
+                  <BrutalButton className="hover:bg-pink-400">← BLOG</BrutalButton>
+                </Link>
+                <Link href="/">
+                  <BrutalButton className="hover:bg-yellow-400">HOME</BrutalButton>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </header>
 
-        <article className="flex flex-col gap-6 px-4">
-          <header>
-            <h1 className="font-medium text-3xl">글이 없어요.</h1>
-          </header>
-        </article>
-      </DefaultLayout>
+        {/* 메인 콘텐츠 */}
+        <main className="px-4 md:px-6 py-12">
+          <article className="max-w-5xl mx-auto">
+            <header>
+              <h1 className="font-medium text-3xl">글이 없어요.</h1>
+            </header>
+          </article>
+        </main>
+
+        {/* 푸터 */}
+        <footer className="bg-black border-t-4 border-white py-12">
+          <p className="text-gray-600 font-black text-sm">© {new Date().getFullYear()} w0nder</p>
+        </footer>
+      </div>
     );
   }
 
   return (
     <>
       <HeadContentMeta title={title} description={description} structuredData={structuredData} />
-      <DefaultLayout>
-        <Nav title="Posts" leftUrl="/posts" />
 
-        <article className="flex flex-col gap-6 p-4">
-          <header>
-            <h1 className="font-medium text-3xl">{post.title}</h1>
-            <div className="flex flex-row justify-between items-center my-4 text-base">
-              <span className="flex-shrink-0 font-normal text-gray-500">{postCreatedAt?.toFormat('yyyy.MM.dd')}</span>
-              <div className="flex flex-row gap-2 items-center">
-                <button type="button" aria-label="share" onClick={handleShareOpen}>
-                  <ShareIcon size={24} color="#000000" />
-                </button>
+      <div className="min-h-screen bg-gray-100">
+        {/* 포스트 헤더 */}
+        <header className="border-b-4 border-black bg-white p-4 md:p-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex items-center justify-between">
+              <div className="flex gap-4">
+                <Link href="/posts">
+                  <BrutalButton className="px-4 py-2 hover:bg-pink-400">← BLOG</BrutalButton>
+                </Link>
+                <Link href="/">
+                  <BrutalButton className="px-4 py-2 hover:bg-yellow-400">HOME</BrutalButton>
+                </Link>
               </div>
+              <BrutalButton
+                onClick={() => setIsShareOpen(true)}
+                className="px-4 py-2 font-black text-base hover:bg-blue-400">
+                <i className="ri-share-line mr-2" />
+                SHARE
+              </BrutalButton>
             </div>
-          </header>
-          <section>
-            <Editor content={post.article} editable={false} />
+          </div>
+        </header>
 
-            <div className="sr-only">{post.article}</div>
-          </section>
-        </article>
+        {/* 메인 콘텐츠 */}
+        <main className="px-4 md:px-6 py-12">
+          <BlogPostDetail
+            title={post.title}
+            content={post.article}
+            date={postCreatedAt?.toFormat('MMM dd, yyyy').toUpperCase() || ''}
+            readTime={getReadTime(post.article)}
+            category={getCategoryName(post.category || '', post.tags)}
+            accentColor={getCategoryColor(post.category || '', post.tags)}
+          />
+        </main>
 
+        {/* 푸터 */}
+        <footer className="max-w-6xl mx-auto px-4 md:px-6 text-center py-12">
+          <p className="text-gray-600 font-black text-sm">© {new Date().getFullYear()} w0nder</p>
+        </footer>
+
+        {/* Share Modal */}
         <Share
-          title={title}
+          title={post.title}
           text={description}
-          url={`${Configure.ServiceUrl}${post?.shortUrl ?? post?.url ?? ''}`}
+          url={typeof window !== 'undefined' ? window.location.href : ''}
           isOpen={isShareOpen}
-          onClose={handleShareClose}
+          onClose={() => setIsShareOpen(false)}
         />
-      </DefaultLayout>
+      </div>
     </>
   );
 };
