@@ -1,13 +1,13 @@
 import { HeadContentMeta } from '@/components/common/HeadContentMeta';
 import { Share } from '@/components/common/Share';
-import { PROFILE, SOCIALS, LINKS } from '@/constants/common';
+import { BrutalButton } from '@/components/ui/BrutalButton';
+import { LINKS, PROFILE, SOCIALS } from '@/constants/common';
 import { Configure } from '@/constants/configure';
+import { ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useCallback, useState } from 'react';
 import { ProfilePage, WithContext } from 'schema-dts';
-import { ExternalLink } from 'lucide-react';
-import { BrutalButton } from '@/components/ui/BrutalButton';
 
 const structuredData: WithContext<ProfilePage> = {
   '@context': 'https://schema.org',
