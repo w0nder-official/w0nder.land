@@ -2,6 +2,7 @@ import { HeadContentMeta } from '@/components/common/HeadContentMeta';
 import { Share } from '@/components/common/Share';
 import { BlogPostDetail } from '@/components/ui/BlogPostDetail';
 import { BrutalButton } from '@/components/ui/BrutalButton';
+import { getTexts } from '@/components/editor/utils';
 import { Configure } from '@/constants/configure';
 import { ellipsis } from '@/libs/utils/string';
 import { getPostUrl } from '@/libs/utils/urls';
@@ -30,7 +31,11 @@ const PostPage = ({ post }: PostProps) => {
 
   // 80자 이상이 되면 검색엔진에서 잘 처리해주지 못한다 80자 이상이면 ellipsis 처리를 해준다.
   const title = useMemo(() => ellipsis(post?.title ?? '', 80), [post]);
-  const description = useMemo(() => ellipsis(post?.article.replaceAll('\n', ' ') ?? '', 200), [post]);
+  const description = useMemo(() => {
+    const textContent = getTexts(post?.article);
+    const cleanText = textContent.replace(/\s+/g, ' ').trim();
+    return ellipsis(cleanText, 200);
+  }, [post?.article]);
 
   const shareUrl = useMemo(() => {
     if (post?.shortUrl) {
