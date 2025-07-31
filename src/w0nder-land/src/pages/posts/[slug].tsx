@@ -70,12 +70,12 @@ const PostPage = ({ post }: PostProps) => {
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center justify-between">
               <div className="flex gap-4">
-                <Link href="/posts">
-                  <BrutalButton className="hover:bg-pink-400">← BLOG</BrutalButton>
-                </Link>
-                <Link href="/">
-                  <BrutalButton className="hover:bg-yellow-400">HOME</BrutalButton>
-                </Link>
+                <BrutalButton asChild className="px-4 py-2 hover:bg-pink-400 font-black">
+                  <Link href="/posts">← BLOG</Link>
+                </BrutalButton>
+                <BrutalButton asChild className="px-4 py-2 hover:bg-yellow-400 font-black">
+                  <Link href="/">HOME</Link>
+                </BrutalButton>
               </div>
             </div>
           </div>
@@ -113,12 +113,12 @@ const PostPage = ({ post }: PostProps) => {
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center justify-between">
               <div className="flex gap-4">
-                <Link href="/posts">
-                  <BrutalButton className="px-4 py-2 hover:bg-pink-400">← BLOG</BrutalButton>
-                </Link>
-                <Link href="/">
-                  <BrutalButton className="px-4 py-2 hover:bg-yellow-400">HOME</BrutalButton>
-                </Link>
+                <BrutalButton asChild className="px-4 py-2 hover:bg-pink-400 font-black">
+                  <Link href="/posts">← BLOG</Link>
+                </BrutalButton>
+                <BrutalButton asChild className="px-4 py-2 hover:bg-yellow-400 font-black">
+                  <Link href="/">HOME</Link>
+                </BrutalButton>
               </div>
               <BrutalButton
                 onClick={() => setIsShareOpen(true)}

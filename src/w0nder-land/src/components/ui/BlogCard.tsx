@@ -1,11 +1,10 @@
-import { BrutalCard } from './BrutalCard';
-import { BrutalButton } from './BrutalButton';
 import { BrutalBadge } from './BrutalBadge';
+import { BrutalButton } from './BrutalButton';
 import { BlogPost } from './types';
 
 export function BlogCard({ title, excerpt, date, readTime, category, accentColor }: BlogPost) {
   return (
-    <BrutalCard interactive className="flex flex-col">
+    <div className="flex flex-col">
       {/* Category Badge */}
       <div className="p-6 pb-0">
         <BrutalBadge accentColor={accentColor} shadowSize="sm" borderSize="2" className="px-3 py-1 text-sm">
@@ -31,6 +30,6 @@ export function BlogCard({ title, excerpt, date, readTime, category, accentColor
           READ MORE
         </BrutalButton>
       </div>
-    </BrutalCard>
+    </div>
   );
 }

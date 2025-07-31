@@ -45,9 +45,9 @@ const PostsPage = ({ posts }: PostsProps) => {
         <header className="border-b-4 border-black bg-white p-4 md:p-6">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center justify-between">
-              <Link href="/">
-                <BrutalButton className="px-4 py-2 hover:bg-yellow-400">← HOME</BrutalButton>
-              </Link>
+              <BrutalButton asChild className="px-4 py-2 hover:bg-yellow-400 font-black">
+                <Link href="/">← HOME</Link>
+              </BrutalButton>
             </div>
           </div>
         </header>
@@ -85,17 +85,22 @@ const PostsPage = ({ posts }: PostsProps) => {
               const excerpt = `${textContent.replace(/\n\n/g, ' ').substring(0, 150)}...`;
 
               return (
-                <Link href={post.url} key={post.uuid}>
-                  <BlogCard
-                    title={post.title}
-                    content={post.article}
-                    excerpt={excerpt}
-                    date={DateTime.fromISO(post.createdAt).toFormat('MMM dd').toUpperCase()}
-                    readTime={getReadTime(post.article)}
-                    category={getCategoryName(post.category || '', post.tags)}
-                    accentColor={getCategoryColor(post.category || '', post.tags)}
-                  />
-                </Link>
+                <BrutalButton
+                  asChild
+                  key={post.uuid}
+                  className="w-full text-left p-0 bg-transparent hover:bg-transparent">
+                  <Link href={post.url}>
+                    <BlogCard
+                      title={post.title}
+                      content={post.article}
+                      excerpt={excerpt}
+                      date={DateTime.fromISO(post.createdAt).toFormat('MMM dd').toUpperCase()}
+                      readTime={getReadTime(post.article)}
+                      category={getCategoryName(post.category || '', post.tags)}
+                      accentColor={getCategoryColor(post.category || '', post.tags)}
+                    />
+                  </Link>
+                </BrutalButton>
               );
             })}
           </div>

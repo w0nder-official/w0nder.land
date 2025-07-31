@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, cloneElement, isValidElement } from 'react';
 import { getBrutalClasses } from './utils';
 import { BrutalStyleProps } from './types';
 
@@ -8,6 +8,7 @@ interface BrutalButtonProps extends BrutalStyleProps {
   disabled?: boolean;
   variant?: 'default' | 'accent';
   accentColor?: string;
+  asChild?: boolean;
 }
 
 export const BrutalButton: React.FC<BrutalButtonProps> = ({
@@ -19,6 +20,7 @@ export const BrutalButton: React.FC<BrutalButtonProps> = ({
   borderSize = '2',
   variant = 'default',
   accentColor = 'black',
+  asChild = false,
 }) => {
   const [isPressed, setIsPressed] = useState(false);
 
@@ -28,7 +30,10 @@ export const BrutalButton: React.FC<BrutalButtonProps> = ({
 
   const handleTouchEnd = useCallback(() => {
     setIsPressed(false);
-  }, []);
+    if (onClick) {
+      onClick();
+    }
+  }, [onClick]);
 
   const handleTouchCancel = useCallback(() => {
     setIsPressed(false);
@@ -61,6 +66,38 @@ export const BrutalButton: React.FC<BrutalButtonProps> = ({
     return `${baseClasses} ${variantClasses}`;
   }, [className, shadowSize, borderSize, isPressed, variant, accentColor]);
 
+  if (asChild) {
+    if (!isValidElement(children)) {
+      throw new Error('asChild requires a single valid React element as children');
+    }
+
+    // asChild일 때는 className을 별도로 처리
+    const baseClasses = getBrutalClasses({ shadowSize, borderSize, className: '' });
+    const existingClass = children.props.className || '';
+
+    // width 관련 클래스가 있으면 block 클래스 자동 추가
+    const hasWidthClass = className.includes('w-') || existingClass.includes('w-');
+    const blockClass = hasWidthClass ? 'block' : '';
+
+    // group 클래스 자동 추가
+    const groupClass = 'group';
+
+    const combinedClass = existingClass
+      ? `${existingClass} ${baseClasses} ${className} ${blockClass} ${groupClass}`.trim()
+      : `${baseClasses} ${className} ${blockClass} ${groupClass}`.trim();
+
+    const childProps = {
+      className: combinedClass,
+      onTouchStart: handleTouchStart,
+      onTouchEnd: handleTouchEnd,
+      onTouchCancel: handleTouchCancel,
+      onClick,
+      disabled,
+    };
+
+    return cloneElement(children, childProps);
+  }
+
   return (
     <button
       type="button"
@@ -69,7 +106,7 @@ export const BrutalButton: React.FC<BrutalButtonProps> = ({
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
       onTouchCancel={handleTouchCancel}
-      className={getButtonClass()}>
+      className={`${getButtonClass()} group`}>
       {children}
     </button>
   );

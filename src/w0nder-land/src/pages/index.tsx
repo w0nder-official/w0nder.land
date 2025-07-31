@@ -96,15 +96,17 @@ const AboutPage = () => {
             <div className="flex justify-center">
               <div className="flex flex-wrap justify-center gap-3">
                 {linkTreeData.socialLinks.map(social => (
-                  <Link key={social.name} href={social.url} target="_blank">
-                    <BrutalButton
-                      className={`${social.color} flex items-center justify-center w-12 h-12`}
-                      shadowSize="md">
+                  <BrutalButton
+                    key={social.name}
+                    asChild
+                    className={`${social.color} flex items-center justify-center w-12 h-12`}
+                    shadowSize="md">
+                    <Link href={social.url} target="_blank">
                       <i
                         className={`${social.icon} text-3xl ${social.textColor} group-hover:scale-110 transition-transform`}
                       />
-                    </BrutalButton>
-                  </Link>
+                    </Link>
+                  </BrutalButton>
                 ))}
 
                 <BrutalButton
@@ -120,24 +122,22 @@ const AboutPage = () => {
           {/* Link Buttons */}
           <div className="space-y-4">
             {linkTreeData.linkButtons.map(link => (
-              <Link key={link.title} href={link.url} target={link.isExternal ? '_blank' : '_self'} className="block">
-                <BrutalButton className={`w-full ${link.color} p-5 group`} shadowSize="lg">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="flex items-center justify-center">
-                        <i className={`${link.icon} text-4xl text-black`} />
-                      </div>
-                      <div className="text-left">
-                        <h3 className="text-2xl font-black text-black mb-1">{link.title}</h3>
-                        <p className="text-base font-medium text-black opacity-80">{link.description}</p>
-                      </div>
+              <BrutalButton asChild key={link.title} className={`w-full ${link.color} p-5`} shadowSize="lg">
+                <Link href={link.url} target={link.isExternal ? '_blank' : '_self'}>
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="flex items-center ">
+                      <i className={`${link.icon} text-4xl text-black`} />
+                    </div>
+                    <div className="flex-1 text-left">
+                      <h3 className="text-2xl font-black text-black mb-1">{link.title}</h3>
+                      <p className="text-base font-medium text-black opacity-80">{link.description}</p>
                     </div>
                     {link.isExternal && (
                       <ExternalLink className="w-5 h-5 text-black group-hover:scale-110 transition-transform flex-shrink-0" />
                     )}
                   </div>
-                </BrutalButton>
-              </Link>
+                </Link>
+              </BrutalButton>
             ))}
           </div>
 
