@@ -1,4 +1,5 @@
 ---
+title: 'fl!p fl!p 개발기 2부: 거리의 역설'
 author: 'w0nder'
 shortUrl: 'flip-flip-dev-2-distance-paradox'
 authorProfile: '/images/profile_image.jpg'
