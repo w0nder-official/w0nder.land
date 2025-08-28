@@ -23,8 +23,8 @@ keywords:
     '문화자본',
     '실천철학',
   ]
-createdAt: '2025-08-21T09:00:00Z'
-updatedAt: '2025-08-21T10:30:00Z'
+createdAt: '2025-08-28T09:00:00Z'
+updatedAt: '2025-08-28T10:30:00Z'
 ---
 
 <link-preview url="https://maily.so/habitus" title="아비투스 뉴스레터" target="_blank">
