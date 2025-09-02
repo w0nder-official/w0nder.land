@@ -23,8 +23,8 @@ keywords:
     'RefreshToken',
     '모바일OAuth',
   ]
-createdAt: '2025-08-28T09:00:00Z'
-updatedAt: '2025-08-28T10:30:00Z'
+createdAt: '2025-09-02T09:00:00Z'
+updatedAt: '2025-09-02T10:30:00Z'
 ---
 
 # 모바일 환경에서의 OAuth 2.0 보안 구현 가이드
