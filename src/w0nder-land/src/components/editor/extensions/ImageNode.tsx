@@ -1,6 +1,14 @@
 import { Image } from '@tiptap/extension-image';
 import NextImage from 'next/image';
-import { NodeViewWrapper, ReactNodeViewRenderer, NodeViewProps } from '@tiptap/react';
+import { NodeViewWrapper, ReactNodeViewRenderer } from '@tiptap/react';
+import type { NodeViewProps } from './types';
+
+type ImageNodeAttrs = {
+  src: string;
+  alt: string;
+  width: number | null;
+  height: number | null;
+};
 
 export const ImageNode = Image.extend({
   addAttributes() {
@@ -20,15 +28,13 @@ export const ImageNode = Image.extend({
   },
 });
 
-type ImageAttrs = {
-  src: string;
-  alt: string;
-  width: number | null;
-  height: number | null;
-};
+export const CustomImageView = (props: NodeViewProps) => {
+  const { node } = props;
+  const attrs = node.attrs as ImageNodeAttrs;
 
-export const CustomImageView = ({ node }: NodeViewProps) => {
-  const attrs = node.attrs as ImageAttrs;
+  if (!attrs.src || !attrs.alt) {
+    return null;
+  }
 
   return (
     <NodeViewWrapper>

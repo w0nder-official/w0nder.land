@@ -2166,6 +2166,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tiptap/core@npm:2.14.0":
+  version: 2.14.0
+  resolution: "@tiptap/core@npm:2.14.0"
+  peerDependencies:
+    "@tiptap/pm": ^2.7.0
+  checksum: 10c0/054e34c78d74542d4a66b0b28c56a398db128bec873d666fe8dec91e71883a6a6ab390897425d8e49c59ecdb761cec5488328e40f75735762cee2e58f9e664b6
+  languageName: node
+  linkType: hard
+
 "@tiptap/core@npm:^2.14.0":
   version: 2.27.1
   resolution: "@tiptap/core@npm:2.27.1"
@@ -3340,6 +3349,7 @@ __metadata:
     "@radix-ui/react-tooltip": "npm:1.2.7"
     "@slack/web-api": "npm:7.9.2"
     "@tailwindcss/postcss": "npm:4.1.10"
+    "@tiptap/core": "npm:2.14.0"
     "@tiptap/extension-bubble-menu": "npm:2.14.0"
     "@tiptap/extension-code": "npm:2.14.0"
     "@tiptap/extension-code-block": "npm:2.14.0"

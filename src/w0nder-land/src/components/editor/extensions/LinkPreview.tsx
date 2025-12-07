@@ -1,4 +1,13 @@
-import { mergeAttributes, Node, NodeViewWrapper, ReactNodeViewRenderer, NodeViewProps } from '@tiptap/react';
+import { Node, mergeAttributes } from '@tiptap/core';
+import { NodeViewWrapper, ReactNodeViewRenderer } from '@tiptap/react';
+import type { NodeViewProps, HTMLAttributes } from './types';
+
+type LinkPreviewAttrs = {
+  title: string | null;
+  url: string | null;
+  target: string;
+  image: string | null;
+};
 
 export const LinkPreview = Node.create({
   name: 'linkPreview',
@@ -32,7 +41,7 @@ export const LinkPreview = Node.create({
     ];
   },
 
-  renderHTML({ HTMLAttributes }) {
+  renderHTML({ HTMLAttributes }: { HTMLAttributes: HTMLAttributes }) {
     return ['link-preview', mergeAttributes(HTMLAttributes)];
   },
 
@@ -41,15 +50,13 @@ export const LinkPreview = Node.create({
   },
 });
 
-type LinkPreviewAttrs = {
-  title: string;
-  url: string;
-  target: string;
-  image?: string;
-};
-
-export const LinkPreviewView = ({ node }: NodeViewProps) => {
+export const LinkPreviewView = (props: NodeViewProps) => {
+  const { node } = props;
   const attrs = node.attrs as LinkPreviewAttrs;
+
+  if (!attrs.url || !attrs.title) {
+    return null;
+  }
 
   return (
     <NodeViewWrapper>
@@ -63,7 +70,11 @@ export const LinkPreviewView = ({ node }: NodeViewProps) => {
 
         {attrs.image && (
           <a href={attrs.url} target={attrs.target} rel="noreferrer" className="basis-1/3 shrink-0 max-w-44">
-            <img className="h-full w-full object-cover object-center" src={attrs.image} alt={attrs.title} />
+            <img
+              className="h-full w-full object-cover object-center"
+              src={attrs.image}
+              alt={attrs.title || undefined}
+            />
           </a>
         )}
       </div>

@@ -1,4 +1,4 @@
-import { JSONContent } from '@tiptap/react';
+import type { JSONContent } from '@tiptap/core';
 import * as marked from 'marked';
 import { load } from 'cheerio';
 

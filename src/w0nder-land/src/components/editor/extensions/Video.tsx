@@ -1,4 +1,13 @@
-import { mergeAttributes, Node, NodeViewWrapper, ReactNodeViewRenderer, NodeViewProps } from '@tiptap/react';
+import { Node, mergeAttributes } from '@tiptap/core';
+import { NodeViewWrapper, ReactNodeViewRenderer } from '@tiptap/react';
+import type { NodeViewProps, HTMLAttributes } from './types';
+
+type VideoAttrs = {
+  title: string | null;
+  url: string | null;
+  target: string;
+  image: string | null;
+};
 
 export const Video = Node.create({
   name: 'video',
@@ -32,7 +41,7 @@ export const Video = Node.create({
     ];
   },
 
-  renderHTML({ HTMLAttributes }) {
+  renderHTML({ HTMLAttributes }: { HTMLAttributes: HTMLAttributes }) {
     return ['video', mergeAttributes(HTMLAttributes)];
   },
 
@@ -41,20 +50,20 @@ export const Video = Node.create({
   },
 });
 
-type VideoAttrs = {
-  title: string;
-  url: string;
-};
-
-export const VideoView = ({ node }: NodeViewProps) => {
+export const VideoView = (props: NodeViewProps) => {
+  const { node } = props;
   const attrs = node.attrs as VideoAttrs;
+
+  if (!attrs.url) {
+    return null;
+  }
 
   return (
     <NodeViewWrapper>
       <div className="w-full overflow-hidden bg-white rounded-lg border border-gray-200">
         {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
         <video controls loop autoPlay className="w-full">
-          <source src={attrs.url} type="video/mp4" title={attrs.title} />
+          <source src={attrs.url} type="video/mp4" title={attrs.title || undefined} />
           Your browser does not support the video tag.
         </video>
       </div>
