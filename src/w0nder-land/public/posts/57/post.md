@@ -20,8 +20,8 @@ keywords:
 '디버깅',
 '문제 해결',
 ]
-createdAt: '2025-01-02T09:00:00Z'
-updatedAt: '2025-01-02T10:30:00Z'
+createdAt: '2026-01-02T09:00:00Z'
+updatedAt: '2026-01-02T10:30:00Z'
 ---
 
 `showyourtime` 앱을 React Native CLI에서 Expo로 마이그레이션하면서 사진 라이브러리 접근 부분을 `react-native-cameraroll`에서 `expo-media-library`로 교체했다. Expo의 표준 모듈을 사용하면 운영 복잡도를 줄일 수 있고, 사진 저장, 앨범 생성/조회, 자산 관리 등 필요한 기능을 폭넓게 제공한다는 점이 교체 결정의 이유였다. 하지만 이 전환 과정에서 iOS 사진 접근 권한과 관련된 예상치 못한 이슈를 마주하게 되었다.
