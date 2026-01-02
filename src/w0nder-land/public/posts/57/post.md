@@ -5,21 +5,21 @@ shortUrl: 'ios-photo-permission-limited-issue'
 authorProfile: '/images/profile_image.jpg'
 category: 'TECH'
 keywords:
-[
-'iOS',
-'사진 권한',
-'Limited',
-'Expo',
-'expo-media-library',
-'patch-package',
-'PHPhotoLibraryPreventAutomaticLimitedAccessAlert',
-'권한 테스트',
-'React Native',
-'네이티브 코드',
-'마이그레이션',
-'디버깅',
-'문제 해결',
-]
+  [
+    'iOS',
+    '사진 권한',
+    'Limited',
+    'Expo',
+    'expo-media-library',
+    'patch-package',
+    'PHPhotoLibraryPreventAutomaticLimitedAccessAlert',
+    '권한 테스트',
+    'React Native',
+    '네이티브 코드',
+    '마이그레이션',
+    '디버깅',
+    '문제 해결',
+  ]
 createdAt: '2026-01-02T09:00:00Z'
 updatedAt: '2026-01-02T10:30:00Z'
 ---
