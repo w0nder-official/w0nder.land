@@ -1,8 +1,10 @@
 import { HeadContentMeta } from '@/components/common/HeadContentMeta';
 import { Share } from '@/components/common/Share';
+import { AdSense } from '@/components/common/AdSense';
 import { BlogPostDetail } from '@/components/ui/BlogPostDetail';
 import { BrutalButton } from '@/components/ui/BrutalButton';
 import { getTexts } from '@/components/editor/utils';
+import { AD_SLOTS, AdFormat, AdSlotType } from '@/constants/ads';
 import { Configure } from '@/constants/configure';
 import { ellipsis } from '@/libs/utils/string';
 import { getPostUrl } from '@/libs/utils/urls';
@@ -129,6 +131,17 @@ const PostPage = ({ post }: PostProps) => {
             </div>
           </div>
         </header>
+
+        {/* 상단 배너 광고 */}
+        <div className="max-w-6xl mx-auto px-4 md:px-6 pt-6">
+          <AdSense
+            adSlot={AD_SLOTS[AdSlotType.BANNER]}
+            adFormat={AdFormat.AUTO}
+            fullWidthResponsive
+            enableLazyLoad
+            className="border-4 border-black bg-white p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+          />
+        </div>
 
         {/* 메인 콘텐츠 */}
         <main className="px-4 md:px-6 py-12">

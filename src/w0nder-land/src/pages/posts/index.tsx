@@ -2,6 +2,8 @@ import { getTexts } from '@/components/editor/utils';
 import { BlogCard } from '@/components/ui/BlogCard';
 import { BrutalButton } from '@/components/ui/BrutalButton';
 import { HeadContentMeta } from '@/components/common/HeadContentMeta';
+import { AdSense } from '@/components/common/AdSense';
+import { AD_SLOTS, AdFormat, AdSlotType } from '@/constants/ads';
 import { Configure } from '@/constants/configure';
 import { generateCategories, getCategoryColor, getCategoryName } from '@/libs/utils/category';
 import { getAllPosts, Post } from '@/repository/posts';
@@ -78,16 +80,27 @@ const PostsPage = ({ posts }: PostsProps) => {
             </div>
           </div>
 
+          {/* 상단 배너 광고 */}
+          <div className="mb-12">
+            <AdSense
+              adSlot={AD_SLOTS[AdSlotType.BANNER]}
+              adFormat={AdFormat.AUTO}
+              fullWidthResponsive
+              enableLazyLoad
+              className="border-4 border-black bg-white p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+            />
+          </div>
+
           {/* Blog Posts Grid - 모바일 1열, PC 2열 */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            {filteredPosts.map(post => {
+            {filteredPosts.flatMap((post, index) => {
               const textContent = getTexts(post.article);
               const excerpt = `${textContent.replace(/\n\n/g, ' ').substring(0, 150)}...`;
 
-              return (
+              const items = [
                 <BrutalButton
-                  asChild
                   key={post.uuid}
+                  asChild
                   className="w-full text-left p-0 bg-transparent hover:bg-transparent">
                   <Link href={post.url}>
                     <BlogCard
@@ -100,9 +113,37 @@ const PostsPage = ({ posts }: PostsProps) => {
                       accentColor={getCategoryColor(post.category || '', post.tags)}
                     />
                   </Link>
-                </BrutalButton>
-              );
+                </BrutalButton>,
+              ];
+
+              // 4개 포스트 후 인라인 광고 (그리드의 직접 자식으로 배치)
+              if ((index + 1) % 4 === 0 && index < filteredPosts.length - 1) {
+                items.push(
+                  <div key={`ad-${post.uuid}`} className="col-span-1 lg:col-span-2 my-8">
+                      <AdSense
+                        adSlot={AD_SLOTS[AdSlotType.RECTANGLE]}
+                        adFormat={AdFormat.RECTANGLE}
+                        fullWidthResponsive
+                        enableLazyLoad
+                        className="border-4 border-black bg-white p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+                      />
+                  </div>,
+                );
+              }
+
+              return items;
             })}
+          </div>
+
+          {/* 하단 배너 광고 */}
+          <div className="mb-12">
+            <AdSense
+              adSlot={AD_SLOTS[AdSlotType.BANNER]}
+              adFormat={AdFormat.AUTO}
+              fullWidthResponsive
+              enableLazyLoad
+              className="border-4 border-black bg-white p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+            />
           </div>
 
           {/* Load More Button */}

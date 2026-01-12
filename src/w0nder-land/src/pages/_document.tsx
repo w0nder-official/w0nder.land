@@ -9,6 +9,11 @@ export default function Document() {
         <meta charSet="utf-8" />
 
         <meta name="google-adsense-account" content="ca-pub-9562383946948731" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9562383946948731"
+          crossOrigin="anonymous"
+        />
 
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />

@@ -1,6 +1,8 @@
 import { HeadContentMeta } from '@/components/common/HeadContentMeta';
 import { Share } from '@/components/common/Share';
+import { AdSense } from '@/components/common/AdSense';
 import { BrutalButton } from '@/components/ui/BrutalButton';
+import { AD_SLOTS, AdFormat, AdSlotType } from '@/constants/ads';
 import { LINKS, PROFILE, SOCIALS } from '@/constants/common';
 import { Configure } from '@/constants/configure';
 import { ExternalLink } from 'lucide-react';
@@ -66,6 +68,17 @@ const AboutPage = () => {
 
       <div className="min-h-screen bg-gray-100 py-12">
         <div className="max-w-2xl mx-auto px-4 md:px-6">
+          {/* 최상단 배너 광고 */}
+          <div className="mb-12">
+            <AdSense
+              adSlot={AD_SLOTS[AdSlotType.BANNER]}
+              adFormat={AdFormat.AUTO}
+              fullWidthResponsive
+              enableLazyLoad
+              className="border-4 border-black bg-white p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+            />
+          </div>
+
           {/* Profile Section */}
           <div className="text-center mb-12">
             <div className="relative inline-block mb-6">
@@ -121,24 +134,50 @@ const AboutPage = () => {
 
           {/* Link Buttons */}
           <div className="space-y-4">
-            {linkTreeData.linkButtons.map(link => (
-              <BrutalButton asChild key={link.title} className={`w-full ${link.color} p-5`} shadowSize="lg">
-                <Link href={link.url} target={link.isExternal ? '_blank' : '_self'}>
-                  <div className="flex items-center justify-between gap-3">
-                    <div className="flex items-center ">
-                      <i className={`${link.icon} text-4xl text-black`} />
+            {linkTreeData.linkButtons.map((link, index) => (
+              <div key={link.title}>
+                <BrutalButton asChild className={`w-full ${link.color} p-5`} shadowSize="lg">
+                  <Link href={link.url} target={link.isExternal ? '_blank' : '_self'}>
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="flex items-center ">
+                        <i className={`${link.icon} text-4xl text-black`} />
+                      </div>
+                      <div className="flex-1 text-left">
+                        <h3 className="text-2xl font-black text-black mb-1">{link.title}</h3>
+                        <p className="text-base font-medium text-black opacity-80">{link.description}</p>
+                      </div>
+                      {link.isExternal && (
+                        <ExternalLink className="w-5 h-5 text-black group-hover:scale-110 transition-transform flex-shrink-0" />
+                      )}
                     </div>
-                    <div className="flex-1 text-left">
-                      <h3 className="text-2xl font-black text-black mb-1">{link.title}</h3>
-                      <p className="text-base font-medium text-black opacity-80">{link.description}</p>
-                    </div>
-                    {link.isExternal && (
-                      <ExternalLink className="w-5 h-5 text-black group-hover:scale-110 transition-transform flex-shrink-0" />
-                    )}
+                  </Link>
+                </BrutalButton>
+
+                {/* 링크 버튼 중간에 광고 배치 (2개 후) */}
+                {(index + 1) % 2 === 0 && index < linkTreeData.linkButtons.length - 1 && (
+                  <div className="my-6">
+                    <AdSense
+                      adSlot={AD_SLOTS[AdSlotType.RECTANGLE]}
+                      adFormat={AdFormat.RECTANGLE}
+                      fullWidthResponsive
+                      enableLazyLoad
+                      className="border-4 border-black bg-white p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+                    />
                   </div>
-                </Link>
-              </BrutalButton>
+                )}
+              </div>
             ))}
+          </div>
+
+          {/* 하단 배너 광고 */}
+          <div className="mt-12">
+            <AdSense
+              adSlot={AD_SLOTS[AdSlotType.BANNER]}
+              adFormat={AdFormat.AUTO}
+              fullWidthResponsive
+              enableLazyLoad
+              className="border-4 border-black bg-white p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+            />
           </div>
 
           <Share

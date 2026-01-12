@@ -1,4 +1,6 @@
 import { Editor } from '@/components/editor/Editor';
+import { AdSense } from '@/components/common/AdSense';
+import { AD_SLOTS, AdFormat, AdSlotType } from '@/constants/ads';
 import { BrutalBadge } from '@/components/ui/BrutalBadge';
 import { BlogPost } from '@/components/ui/types';
 
@@ -24,7 +26,46 @@ export function BlogPostDetail({ title, content, date, readTime, category, accen
       </header>
 
       {/* Content using Editor component */}
-      <div className="mb-16">{content && <Editor content={content} editable={false} />}</div>
+      <div className="mb-16">
+        {content && (
+          <>
+            {/* 콘텐츠 상단 광고 */}
+            <div className="mb-8">
+              <AdSense
+                adSlot={AD_SLOTS[AdSlotType.INLINE]}
+                adFormat={AdFormat.AUTO}
+                fullWidthResponsive
+                enableLazyLoad
+                className="border-4 border-black bg-white p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+              />
+            </div>
+
+            <Editor content={content} editable={false} />
+
+            {/* 콘텐츠 중간 광고 */}
+            <div className="my-8">
+              <AdSense
+                adSlot={AD_SLOTS[AdSlotType.RECTANGLE]}
+                adFormat={AdFormat.RECTANGLE}
+                fullWidthResponsive
+                enableLazyLoad
+                className="border-4 border-black bg-white p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+              />
+            </div>
+
+            {/* 콘텐츠 하단 광고 */}
+            <div className="mt-8">
+              <AdSense
+                adSlot={AD_SLOTS[AdSlotType.BANNER]}
+                adFormat={AdFormat.AUTO}
+                fullWidthResponsive
+                enableLazyLoad
+                className="border-4 border-black bg-white p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+              />
+            </div>
+          </>
+        )}
+      </div>
 
       {/* SEO용 텍스트 - 시각적으로는 숨김 */}
       {content && (

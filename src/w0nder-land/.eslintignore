@@ -9,3 +9,4 @@ devServer.js
 server.js
 prisma
 *.js
+next-env.d.ts
