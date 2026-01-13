@@ -116,17 +116,17 @@ const PostsPage = ({ posts }: PostsProps) => {
                 </BrutalButton>,
               ];
 
-              // 4개 포스트 후 인라인 광고 (그리드의 직접 자식으로 배치)
+              // 4개 포스트 후 Display square 광고 (그리드의 직접 자식으로 배치)
               if ((index + 1) % 4 === 0 && index < filteredPosts.length - 1) {
                 items.push(
                   <div key={`ad-${post.uuid}`} className="col-span-1 lg:col-span-2 my-8">
-                      <AdSense
-                        adSlot={AD_SLOTS[AdSlotType.RECTANGLE]}
-                        adFormat={AdFormat.RECTANGLE}
-                        fullWidthResponsive
-                        enableLazyLoad
-                        className="border-4 border-black bg-white p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
-                      />
+                    <AdSense
+                      adSlot={AD_SLOTS[AdSlotType.RECTANGLE]}
+                      adFormat={AdFormat.AUTO}
+                      fullWidthResponsive
+                      enableLazyLoad
+                      className="border-4 border-black bg-white p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+                    />
                   </div>,
                 );
               }

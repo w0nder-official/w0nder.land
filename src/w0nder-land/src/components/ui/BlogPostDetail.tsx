@@ -29,24 +29,13 @@ export function BlogPostDetail({ title, content, date, readTime, category, accen
       <div className="mb-16">
         {content && (
           <>
-            {/* 콘텐츠 상단 광고 */}
-            <div className="mb-8">
-              <AdSense
-                adSlot={AD_SLOTS[AdSlotType.INLINE]}
-                adFormat={AdFormat.AUTO}
-                fullWidthResponsive
-                enableLazyLoad
-                className="border-4 border-black bg-white p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
-              />
-            </div>
-
             <Editor content={content} editable={false} />
 
-            {/* 콘텐츠 중간 광고 */}
+            {/* 콘텐츠 중간 광고 - In-article ad (콘텐츠와 자연스럽게 통합) */}
             <div className="my-8">
               <AdSense
-                adSlot={AD_SLOTS[AdSlotType.RECTANGLE]}
-                adFormat={AdFormat.RECTANGLE}
+                adSlot={AD_SLOTS[AdSlotType.IN_ARTICLE]}
+                adFormat={AdFormat.IN_ARTICLE}
                 fullWidthResponsive
                 enableLazyLoad
                 className="border-4 border-black bg-white p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"

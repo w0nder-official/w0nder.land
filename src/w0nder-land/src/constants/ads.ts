@@ -15,14 +15,14 @@
 
 /**
  * 광고 슬롯 타입
- * 배너: 모든 페이지 상단/하단에서 사용 (728x90 또는 반응형)
- * 인라인: 콘텐츠 중간에 사용 (300x250 또는 반응형)
- * 사각형: 특정 위치에 사용 (300x250)
+ * 배너: 모든 페이지 상단/하단에서 사용 (728x90 또는 반응형, Horizontal)
+ * 사각형: 특정 위치에 사용 (300x250, Square)
+ * 인아티클: 콘텐츠 내 자연스러운 배치 (In-article ads)
  */
 export enum AdSlotType {
   BANNER = 'BANNER',
-  INLINE = 'INLINE',
   RECTANGLE = 'RECTANGLE',
+  IN_ARTICLE = 'IN_ARTICLE',
 }
 
 /**
@@ -31,8 +31,8 @@ export enum AdSlotType {
  */
 const adSlotValues: Record<AdSlotType, string> = {
   [AdSlotType.BANNER]: process.env.NEXT_PUBLIC_ADS_BANNER || 'YOUR_BANNER_AD_SLOT',
-  [AdSlotType.INLINE]: process.env.NEXT_PUBLIC_ADS_INLINE || 'YOUR_INLINE_AD_SLOT',
   [AdSlotType.RECTANGLE]: process.env.NEXT_PUBLIC_ADS_RECTANGLE || 'YOUR_RECTANGLE_AD_SLOT',
+  [AdSlotType.IN_ARTICLE]: process.env.NEXT_PUBLIC_ADS_IN_ARTICLE || 'YOUR_IN_ARTICLE_AD_SLOT',
 };
 
 /**
@@ -41,8 +41,8 @@ const adSlotValues: Record<AdSlotType, string> = {
  */
 export const AD_SLOTS = {
   [AdSlotType.BANNER]: adSlotValues[AdSlotType.BANNER],
-  [AdSlotType.INLINE]: adSlotValues[AdSlotType.INLINE],
   [AdSlotType.RECTANGLE]: adSlotValues[AdSlotType.RECTANGLE],
+  [AdSlotType.IN_ARTICLE]: adSlotValues[AdSlotType.IN_ARTICLE],
 } as const;
 
 /**
@@ -53,4 +53,5 @@ export enum AdFormat {
   RECTANGLE = 'rectangle',
   VERTICAL = 'vertical',
   HORIZONTAL = 'horizontal',
+  IN_ARTICLE = 'in-article',
 }

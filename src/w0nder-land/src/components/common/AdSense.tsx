@@ -83,7 +83,15 @@ export function AdSense({
         <div
           className="flex items-center justify-center border-2 border-dashed border-gray-400 bg-gray-100"
           style={{
-            minHeight: adFormat === AdFormat.RECTANGLE ? '250px' : '90px',
+            minHeight: (() => {
+              if (adFormat === AdFormat.RECTANGLE) {
+                return '250px';
+              }
+              if (adFormat === AdFormat.IN_ARTICLE) {
+                return '200px';
+              }
+              return '90px';
+            })(),
             width: '100%',
           }}>
           <div className="text-center p-4">
@@ -96,6 +104,9 @@ export function AdSense({
                 }
                 if (adFormat === AdFormat.RECTANGLE) {
                   return '300x250';
+                }
+                if (adFormat === AdFormat.IN_ARTICLE) {
+                  return 'In-article (반응형)';
                 }
                 return adFormat;
               })()}
@@ -121,12 +132,23 @@ export function AdSense({
           className="adsbygoogle"
           style={{
             display: 'block',
+            textAlign: 'center',
             ...(fullWidthResponsive ? {} : { width: '100%', maxWidth: '728px', margin: '0 auto' }),
           }}
           data-ad-client="ca-pub-9562383946948731"
           data-ad-slot={adSlot}
-          data-ad-format={adFormat}
-          data-full-width-responsive={fullWidthResponsive ? 'true' : 'false'}
+          {...(() => {
+            if (adFormat === AdFormat.IN_ARTICLE) {
+              return {
+                'data-ad-layout': 'in-article',
+                'data-ad-format': 'fluid',
+              };
+            }
+            return {
+              'data-ad-format': adFormat,
+              'data-full-width-responsive': fullWidthResponsive ? 'true' : 'false',
+            };
+          })()}
         />
       )}
     </div>
@@ -143,20 +165,6 @@ export function AdBanner({ className = '', enableLazyLoad = true }: { className?
         fullWidthResponsive
         enableLazyLoad={enableLazyLoad}
         className="border-4 border-black bg-white p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
-      />
-    </div>
-  );
-}
-
-export function AdInline({ className = '', enableLazyLoad = true }: { className?: string; enableLazyLoad?: boolean }) {
-  return (
-    <div className={`my-8 flex justify-center ${className}`}>
-      <AdSense
-        adSlot="YOUR_INLINE_AD_SLOT"
-        adFormat={AdFormat.AUTO}
-        fullWidthResponsive
-        enableLazyLoad={enableLazyLoad}
-        className="border-4 border-black bg-white p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] max-w-md"
       />
     </div>
   );
