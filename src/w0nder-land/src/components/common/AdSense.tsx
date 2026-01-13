@@ -105,6 +105,9 @@ export function AdSense({
                 if (adFormat === AdFormat.RECTANGLE) {
                   return '300x250';
                 }
+                if (adFormat === AdFormat.HORIZONTAL) {
+                  return '728x90 (Horizontal)';
+                }
                 if (adFormat === AdFormat.IN_ARTICLE) {
                   return 'In-article (반응형)';
                 }
@@ -133,7 +136,11 @@ export function AdSense({
           style={{
             display: 'block',
             textAlign: 'center',
-            ...(fullWidthResponsive ? {} : { width: '100%', maxWidth: '728px', margin: '0 auto' }),
+            ...(adFormat === AdFormat.HORIZONTAL
+              ? { width: '100%', maxWidth: '728px', margin: '0 auto' }
+              : fullWidthResponsive
+                ? {}
+                : { width: '100%', maxWidth: '728px', margin: '0 auto' }),
           }}
           data-ad-client="ca-pub-9562383946948731"
           data-ad-slot={adSlot}
@@ -142,6 +149,12 @@ export function AdSense({
               return {
                 'data-ad-layout': 'in-article',
                 'data-ad-format': 'fluid',
+              };
+            }
+            if (adFormat === AdFormat.HORIZONTAL) {
+              return {
+                'data-ad-format': 'horizontal',
+                'data-full-width-responsive': 'false',
               };
             }
             return {
