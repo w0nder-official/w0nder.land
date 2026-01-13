@@ -125,7 +125,7 @@ const AboutPage = () => {
             <AdSense
               adSlot={AD_SLOTS[AdSlotType.BANNER]}
               adFormat={AdFormat.HORIZONTAL}
-              fullWidthResponsive
+              fullWidthResponsive={false}
               enableLazyLoad
               className="border-4 border-black bg-white p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
             />
@@ -159,7 +159,7 @@ const AboutPage = () => {
             <AdSense
               adSlot={AD_SLOTS[AdSlotType.BANNER]}
               adFormat={AdFormat.HORIZONTAL}
-              fullWidthResponsive
+              fullWidthResponsive={false}
               enableLazyLoad
               className="border-4 border-black bg-white p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
             />

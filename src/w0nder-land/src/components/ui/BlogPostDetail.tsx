@@ -49,7 +49,7 @@ export function BlogPostDetail({ title, content, date, readTime, category, accen
               <AdSense
                 adSlot={AD_SLOTS[AdSlotType.BANNER]}
                 adFormat={AdFormat.AUTO}
-                fullWidthResponsive
+                fullWidthResponsive={false}
                 enableLazyLoad
                 className="border-4 border-black bg-white p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
               />

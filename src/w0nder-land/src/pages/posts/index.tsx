@@ -85,7 +85,7 @@ const PostsPage = ({ posts }: PostsProps) => {
             <AdSense
               adSlot={AD_SLOTS[AdSlotType.BANNER]}
               adFormat={AdFormat.AUTO}
-              fullWidthResponsive
+              fullWidthResponsive={false}
               enableLazyLoad
               className="border-4 border-black bg-white p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
             />
@@ -123,7 +123,7 @@ const PostsPage = ({ posts }: PostsProps) => {
                     <AdSense
                       adSlot={AD_SLOTS[AdSlotType.RECTANGLE]}
                       adFormat={AdFormat.AUTO}
-                      fullWidthResponsive
+                      fullWidthResponsive={false}
                       enableLazyLoad
                       className="border-4 border-black bg-white p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
                     />
@@ -140,7 +140,7 @@ const PostsPage = ({ posts }: PostsProps) => {
             <AdSense
               adSlot={AD_SLOTS[AdSlotType.BANNER]}
               adFormat={AdFormat.AUTO}
-              fullWidthResponsive
+              fullWidthResponsive={false}
               enableLazyLoad
               className="border-4 border-black bg-white p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
             />
