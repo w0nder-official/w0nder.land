@@ -1,9 +1,9 @@
 import { Node, mergeAttributes } from '@tiptap/core';
 import { NodeViewWrapper, ReactNodeViewRenderer } from '@tiptap/react';
-import type { NodeViewProps } from './types';
-import { NODE_TYPES } from './types';
 import { AdSense } from '@/components/common/AdSense';
 import { AD_SLOTS, AdFormat, AdSlotType } from '@/constants/ads';
+import type { NodeViewProps } from './types';
+import { NODE_TYPES } from './types';
 
 type AdNodeAttrs = {
   adSlot: AdSlotType;

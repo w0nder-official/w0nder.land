@@ -55,3 +55,28 @@ export enum AdFormat {
   HORIZONTAL = 'horizontal',
   IN_ARTICLE = 'in-article',
 }
+
+/**
+ * Google AdSense Publisher ID
+ */
+export const AD_CLIENT_ID = 'ca-pub-9562383946948731';
+
+/**
+ * IntersectionObserver 설정
+ */
+export const INTERSECTION_OBSERVER_CONFIG = {
+  rootMargin: '50px',
+} as const;
+
+/**
+ * 기본 광고 컨테이너 스타일
+ */
+export const DEFAULT_AD_CONTAINER_STYLE: React.CSSProperties = {
+  display: 'block',
+  textAlign: 'center',
+} as const;
+
+/**
+ * 레이지 로딩 시 최소 높이
+ */
+export const LAZY_LOAD_MIN_HEIGHT = '100px';
