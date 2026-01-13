@@ -2,10 +2,16 @@
 
 
 [http.routers.w0nder-land]
-rule = "Host(`w0nder.work`)"
+rule = "Host(`w0nder.land`)"
 service = "w0nder-land"
 entryPoints = ["https"]
 [http.routers.w0nder-land.tls]
+
+[http.routers.w0nder-work]
+rule = "Host(`w0nder.work`)"
+service = "w0nder-land"
+entryPoints = ["https"]
+[http.routers.w0nder-work.tls]
 
 
 [http.services]
@@ -15,6 +21,6 @@ url = "http://localhost:3000"
 
 
 [[tls.certificates]]
-certFile = "../cert/w0nder.work+1.pem"
-keyFile = "../cert/w0nder.work+1-key.pem"
+certFile = "../cert/w0nder.work+3.pem"
+keyFile = "../cert/w0nder.work+3-key.pem"
 stores = ["default"]

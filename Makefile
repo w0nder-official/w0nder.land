@@ -18,7 +18,7 @@ application:
 certs:
 	@mkcert -install
 	@rm -rf infra/local/cert && mkdir infra/local/cert
-	@cd infra/local/cert && mkcert "w0nder.work" '*.w0nder.work'
+	@cd infra/local/cert && mkcert "w0nder.work" '*.w0nder.work' "w0nder.land" "*.w0nder.land"
 
 clean-node-modules:
 	@rm -rf src/w0nder-land/node_modules
