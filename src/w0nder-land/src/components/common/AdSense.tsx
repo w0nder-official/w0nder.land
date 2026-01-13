@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 import { AdFormat, DEFAULT_AD_CONTAINER_STYLE, LAZY_LOAD_MIN_HEIGHT } from '@/constants/ads';
-import { useAdSense } from '@/hooks/use-adsense';
 import { useAdSenseContainer } from '@/hooks/use-adsense-container';
 import { TestAd } from './TestAd';
 import { AdSenseAd } from './AdSenseAd';
@@ -31,8 +30,6 @@ export function AdSense({
     enableLazyLoad: !isEmptySlot && enableLazyLoad,
     fitToContainer: !isEmptySlot && fitToContainer,
   });
-
-  useAdSense(isVisible);
 
   const adStyle = useMemo(() => {
     if (fitToContainer && containerSize.width > 0 && containerSize.height > 0) {
