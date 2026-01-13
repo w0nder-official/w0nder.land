@@ -68,17 +68,6 @@ const AboutPage = () => {
 
       <div className="min-h-screen bg-gray-100 py-12">
         <div className="max-w-2xl mx-auto px-4 md:px-6">
-          {/* 최상단 배너 광고 */}
-          <div className="mb-12">
-            <AdSense
-              adSlot={AD_SLOTS[AdSlotType.BANNER]}
-              adFormat={AdFormat.AUTO}
-              fullWidthResponsive
-              enableLazyLoad
-              className="border-4 border-black bg-white p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
-            />
-          </div>
-
           {/* Profile Section */}
           <div className="text-center mb-12">
             <div className="relative inline-block mb-6">
@@ -132,9 +121,19 @@ const AboutPage = () => {
             </div>
           </div>
 
+          <div className="my-6">
+            <AdSense
+              adSlot={AD_SLOTS[AdSlotType.BANNER]}
+              adFormat={AdFormat.HORIZONTAL}
+              fullWidthResponsive
+              enableLazyLoad
+              className="border-4 border-black bg-white p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+            />
+          </div>
+
           {/* Link Buttons */}
           <div className="space-y-4">
-            {linkTreeData.linkButtons.map((link, index) => (
+            {linkTreeData.linkButtons.map(link => (
               <div key={link.title}>
                 <BrutalButton asChild className={`w-full ${link.color} p-5`} shadowSize="lg">
                   <Link href={link.url} target={link.isExternal ? '_blank' : '_self'}>
@@ -152,28 +151,14 @@ const AboutPage = () => {
                     </div>
                   </Link>
                 </BrutalButton>
-
-                {/* 링크 버튼 중간에 광고 배치 (2개 후) */}
-                {(index + 1) % 2 === 0 && index < linkTreeData.linkButtons.length - 1 && (
-                  <div className="my-6">
-                    <AdSense
-                      adSlot={AD_SLOTS[AdSlotType.RECTANGLE]}
-                      adFormat={AdFormat.RECTANGLE}
-                      fullWidthResponsive
-                      enableLazyLoad
-                      className="border-4 border-black bg-white p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
-                    />
-                  </div>
-                )}
               </div>
             ))}
           </div>
 
-          {/* 하단 배너 광고 */}
-          <div className="mt-12">
+          <div className="my-6">
             <AdSense
               adSlot={AD_SLOTS[AdSlotType.BANNER]}
-              adFormat={AdFormat.AUTO}
+              adFormat={AdFormat.HORIZONTAL}
               fullWidthResponsive
               enableLazyLoad
               className="border-4 border-black bg-white p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"

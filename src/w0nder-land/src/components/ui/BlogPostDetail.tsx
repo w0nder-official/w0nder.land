@@ -29,8 +29,6 @@ export function BlogPostDetail({ title, content, date, readTime, category, accen
       <div className="mb-16">
         {content && (
           <>
-            <Editor content={content} editable={false} />
-
             {/* 콘텐츠 중간 광고 - In-article ad (콘텐츠와 자연스럽게 통합) */}
             <div className="my-8">
               <AdSense
@@ -41,6 +39,8 @@ export function BlogPostDetail({ title, content, date, readTime, category, accen
                 className="border-4 border-black bg-white p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
               />
             </div>
+
+            <Editor content={content} editable={false} />
 
             {/* 콘텐츠 하단 광고 */}
             <div className="mt-8">

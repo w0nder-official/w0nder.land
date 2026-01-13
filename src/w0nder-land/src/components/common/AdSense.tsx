@@ -154,38 +154,3 @@ export function AdSense({
     </div>
   );
 }
-
-// 사전 정의된 광고 유닛 타입들
-export function AdBanner({ className = '', enableLazyLoad = true }: { className?: string; enableLazyLoad?: boolean }) {
-  return (
-    <div className={`my-8 ${className}`}>
-      <AdSense
-        adSlot="YOUR_BANNER_AD_SLOT"
-        adFormat={AdFormat.AUTO}
-        fullWidthResponsive
-        enableLazyLoad={enableLazyLoad}
-        className="border-4 border-black bg-white p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
-      />
-    </div>
-  );
-}
-
-export function AdRectangle({
-  className = '',
-  enableLazyLoad = true,
-}: {
-  className?: string;
-  enableLazyLoad?: boolean;
-}) {
-  return (
-    <div className={`my-8 flex justify-center ${className}`}>
-      <AdSense
-        adSlot="YOUR_RECTANGLE_AD_SLOT"
-        adFormat={AdFormat.RECTANGLE}
-        fullWidthResponsive
-        enableLazyLoad={enableLazyLoad}
-        className="border-4 border-black bg-white p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
-      />
-    </div>
-  );
-}
