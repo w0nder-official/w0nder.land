@@ -3,8 +3,21 @@ import { AdSense } from '@/components/common/AdSense';
 import { AD_SLOTS, AdFormat, AdSlotType } from '@/constants/ads';
 import { BrutalBadge } from '@/components/ui/BrutalBadge';
 import { BlogPost } from '@/components/ui/types';
+import { useMemo } from 'react';
+import { insertAdInContent } from '@/components/editor/utils';
 
 export function BlogPostDetail({ title, content, date, readTime, category, accentColor }: BlogPost) {
+  // 콘텐츠 중간에 광고 노드 삽입
+  const contentWithAd = useMemo(() => {
+    if (!content) {
+      return null;
+    }
+    return insertAdInContent(content, {
+      adSlot: AdSlotType.IN_ARTICLE,
+      adFormat: AdFormat.IN_ARTICLE,
+    });
+  }, [content]);
+
   return (
     <article className="max-w-5xl mx-auto">
       {/* Post Header */}
@@ -29,18 +42,7 @@ export function BlogPostDetail({ title, content, date, readTime, category, accen
       <div className="mb-16">
         {content && (
           <>
-            {/* 콘텐츠 중간 광고 - In-article ad (콘텐츠와 자연스럽게 통합) */}
-            <div className="my-8">
-              <AdSense
-                adSlot={AD_SLOTS[AdSlotType.IN_ARTICLE]}
-                adFormat={AdFormat.IN_ARTICLE}
-                fullWidthResponsive
-                enableLazyLoad
-                className="border-4 border-black bg-white p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
-              />
-            </div>
-
-            <Editor content={content} editable={false} />
+            <Editor content={contentWithAd || content} editable={false} />
 
             {/* 콘텐츠 하단 광고 */}
             <div className="mt-8">

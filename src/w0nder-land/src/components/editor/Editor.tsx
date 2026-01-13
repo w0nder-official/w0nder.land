@@ -2,6 +2,7 @@ import { ImageNode } from '@/components/editor/extensions/ImageNode';
 import { LinkPreview } from '@/components/editor/extensions/LinkPreview';
 import { Twitter } from '@/components/editor/extensions/Twitter';
 import { Video } from '@/components/editor/extensions/Video';
+import { AdNode } from '@/components/editor/extensions/AdNode';
 import Link from '@tiptap/extension-link';
 import type { Editor as TipTapEditor, JSONContent } from '@tiptap/core';
 import { EditorContent, useEditor } from '@tiptap/react';
@@ -232,6 +233,7 @@ export const Editor = ({ content, editable, onChange }: EditorProps) => {
       LinkPreview,
       Video,
       Twitter,
+      AdNode,
       Link.configure({
         HTMLAttributes: {
           class: 'underline text-emerald-600',
