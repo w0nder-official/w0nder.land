@@ -5,8 +5,8 @@ shortUrl: 'people-who-say-it-wont-work'
 authorProfile: '/images/profile_image.jpg'
 category: 'LIFE'
 keywords: ['1승', '영화', '관점', '조직', '문제해결', '개발자', '대안', '회고', '커리어']
-createdAt: '2026-03-07T09:00:00Z'
-updatedAt: '2026-03-07T09:00:00Z'
+createdAt: '2026-03-15T09:00:00Z'
+updatedAt: '2026-03-15T09:00:00Z'
 ---
 
 같은 책을 두 번 읽으면, 처음에는 보이지 않던 것들이 보인다. 영화도 그렇다. 똑같은 장면인데, 전에는 그냥 지나쳤던 표정 하나, 대사 한 줄이 어느 날 갑자기 다른 무게로 들어온다. 작품이 달라진 게 아니다. 내가 달라진 것이다.
