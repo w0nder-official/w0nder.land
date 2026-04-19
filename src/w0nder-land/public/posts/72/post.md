@@ -5,8 +5,8 @@ shortUrl: 'ai-era-where-we-spend-slack'
 authorProfile: '/images/profile_image.jpg'
 category: 'LIFE'
 keywords: ['AI 개발', '짝코딩', 'TDD', '코드 품질', '기술 부채', '리팩터링', '개발 문화', '개발 생산성', 'AI 코딩 도구', '파킨슨 법칙']
-createdAt: '2026-04-12T09:00:00Z'
-updatedAt: '2026-04-12T09:00:00Z'
+createdAt: '2026-04-19T09:00:00Z'
+updatedAt: '2026-04-19T09:00:00Z'
 ---
 
 
