@@ -5,7 +5,7 @@ import { BrutalButton } from '@/components/ui/BrutalButton';
 import { getTexts } from '@/components/editor/utils';
 import { Configure } from '@/constants/configure';
 import { ellipsis } from '@/libs/utils/string';
-import { getPostUrl } from '@/libs/utils/urls';
+import { getPostSlug, getPostUrl } from '@/libs/utils/urls';
 import { getAllPosts, Post } from '@/repository/posts';
 import { DateTime } from 'luxon';
 import { GetStaticPaths, GetStaticProps } from 'next';
@@ -164,35 +164,52 @@ export default PostPage;
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const slug = (params?.slug as string) ?? '';
-  const [uuid, title] = slug.split('-');
   const posts = getAllPosts();
 
+  const [legacyUuid, legacyTitle] = slug.split('-');
+
   // 레거시 대응
-  if (uuid === '28626b62da0242528bfe5f6873bb32bb') {
+  if (legacyUuid === '28626b62da0242528bfe5f6873bb32bb') {
     return {
       redirect: {
-        destination: getPostUrl('1', title),
+        destination: getPostUrl('1', legacyTitle ?? ''),
         permanent: false,
       },
     };
   }
 
+  // 폴더 id(uuid)는 하이픈을 포함하지 않는다. 첫 번째 세그먼트가 글 id.
+  const uuid = slug.includes('-') ? slug.split('-')[0]! : slug;
   const post = posts.find(it => it.uuid === uuid);
+
+  if (!post) {
+    return { notFound: true };
+  }
+
+  const canonicalSlug = getPostSlug(post.uuid, post.title);
+  if (slug !== canonicalSlug) {
+    return {
+      redirect: {
+        destination: getPostUrl(post.uuid, post.title),
+        permanent: false,
+      },
+    };
+  }
+
   return {
     props: { post },
   };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // 여기서 모든 가능한 slug를 생성하거나 가져와야 합니다.
-  // 예를 들어 데이터베이스에서 모든 포스트의 slug를 가져올 수 있습니다.
-  // 이 코드는 실제 데이터 소스 및 프레임워크에 따라 다를 수 있습니다.
-  const paths = getAllPosts().map(post => ({
-    params: { slug: `${post.uuid}-${post.title}` },
-  }));
+  const posts = getAllPosts();
+  const paths = posts.flatMap(post => [
+    { params: { slug: post.uuid } },
+    { params: { slug: getPostSlug(post.uuid, post.title) } },
+  ]);
 
   return {
     paths,
-    fallback: false, // 이 부분은 fallback 설정에 따라 다를 수 있습니다.
+    fallback: 'blocking',
   };
 };
