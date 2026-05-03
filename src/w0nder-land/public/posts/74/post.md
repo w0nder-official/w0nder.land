@@ -1,7 +1,7 @@
 ---
 title: '시니어 개발자는 무엇인가'
 author: 'w0nder'
-shortUrl: 'what-is-senior-frontend-developer'
+shortUrl: 'what-is-senior-developer'
 authorProfile: '/images/profile_image.jpg'
 category: 'TECH'
 keywords:
