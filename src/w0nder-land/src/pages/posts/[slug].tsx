@@ -10,7 +10,8 @@ import { getAllPosts, Post } from '@/repository/posts';
 import { DateTime } from 'luxon';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
-import { useMemo, useState } from 'react';
+import { useRouter } from 'next/router';
+import { useEffect, useMemo, useState } from 'react';
 import type { BlogPosting, WithContext } from 'schema-dts';
 import { getCategoryColor, getCategoryName } from '@/libs/utils/category';
 
@@ -26,8 +27,20 @@ type PostProps = {
 };
 
 const PostPage = ({ post }: PostProps) => {
+  const router = useRouter();
   const [isShareOpen, setIsShareOpen] = useState(false);
   const postCreatedAt = useMemo(() => post && DateTime.fromISO(post.createdAt), [post]);
+
+  useEffect(() => {
+    if (!router.isReady || !post) {
+      return;
+    }
+    const slug = typeof router.query.slug === 'string' ? router.query.slug : '';
+    const canonicalPath = getPostUrl(post.uuid, post.title);
+    if (slug === post.uuid) {
+      router.replace(canonicalPath);
+    }
+  }, [router.isReady, router.query.slug, post]);
 
   // 80자 이상이 되면 검색엔진에서 잘 처리해주지 못한다 80자 이상이면 ellipsis 처리를 해준다.
   const title = useMemo(() => ellipsis(post?.title ?? '', 80), [post]);
@@ -166,18 +179,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const slug = (params?.slug as string) ?? '';
   const posts = getAllPosts();
 
-  const [legacyUuid, legacyTitle] = slug.split('-');
-
-  // 레거시 대응
-  if (legacyUuid === '28626b62da0242528bfe5f6873bb32bb') {
-    return {
-      redirect: {
-        destination: getPostUrl('1', legacyTitle ?? ''),
-        permanent: false,
-      },
-    };
-  }
-
   // 폴더 id(uuid)는 하이픈을 포함하지 않는다. 첫 번째 세그먼트가 글 id.
   const uuid = slug.includes('-') ? slug.split('-')[0]! : slug;
   const post = posts.find(it => it.uuid === uuid);
@@ -187,13 +188,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 
   const canonicalSlug = getPostSlug(post.uuid, post.title);
-  if (slug !== canonicalSlug) {
-    return {
-      redirect: {
-        destination: getPostUrl(post.uuid, post.title),
-        permanent: false,
-      },
-    };
+  if (slug !== canonicalSlug && slug !== post.uuid) {
+    return { notFound: true };
   }
 
   return {
@@ -203,10 +199,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = getAllPosts();
-  const paths = posts.flatMap(post => [
-    { params: { slug: post.uuid } },
-    { params: { slug: getPostSlug(post.uuid, post.title) } },
-  ]);
+  const paths = posts.map(post => ({
+    params: { slug: getPostSlug(post.uuid, post.title) },
+  }));
 
   return {
     paths,
