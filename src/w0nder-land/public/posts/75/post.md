@@ -1,5 +1,5 @@
 ---
-title: '같은 IP인데 왜 막히나: TLS 핸드셰이크와 봇 탐지'
+title: 'TLS 핸드셰이크와 봇 탐지'
 author: 'w0nder'
 shortUrl: 'tls-handshake-bot-detection'
 authorProfile: '/images/profile_image.jpg'
