@@ -1,5 +1,5 @@
 ---
-title: '맥북은 통과, 서버는 차단: TLS Fingerprinting과 현대 봇 탐지의 실제 구조'
+title: 'TLS Fingerprinting과 봇 탐지'
 author: 'w0nder'
 shortUrl: 'tls-fingerprinting-modern-bot-detection'
 authorProfile: '/images/profile_image.jpg'
@@ -36,9 +36,9 @@ updatedAt: '2026-05-10T18:00:00Z'
 
 > Just a moment…
 
-Cloudflare 봇 차단 페이지였다. 그 순간 문제의 성격이 바뀌었다. 애플리케이션 로직이나 인증이 아니라, 요청이 오리진에 닿기 전에 엣지에서 걸러지고 있다는 뜻이었다.
+Cloudflare 봇 차단 페이지였다. 애플리케이션 로직이나 인증이 아니라, 요청이 오리진에 닿기 전에 엣지에서 걸러지고 있다는 뜻이었다.
 
-더 이상한 건 두 환경이 같은 NAT 뒤에 있었다는 점이다. 밖에서 보면 같은 공인 IP를 썼다. 토큰도 같고 요청 헤더도 같고 User-Agent도 맞춰 놨다. 그런데 맥북은 통과하고 서버만 막혔다.
+이상한 건 두 환경이 같은 NAT 뒤에 있었다는 점이다. 밖에서 보면 같은 공인 IP를 썼다. 토큰도 같고 요청 헤더도 같고 User-Agent도 맞춰 놨다. 그런데 맥북은 통과하고 서버만 막혔다.
 
 요즘 WAF와 Bot Management는 HTTP 헤더만 보지 않는다. UA, Accept, Accept-Language는 코드 한 줄로 바꿀 수 있으니까다. 대신 더 깊은 레이어를 본다. 그중 첫 번째가 **TLS 핸드셰이크의 첫 패킷, ClientHello**다. 사실상 "이 연결을 누가 만들었는지"를 보여 주는 신분증에 가깝다.
 
