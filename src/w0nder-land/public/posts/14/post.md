@@ -23,7 +23,7 @@ createdAt: '2025-02-16T09:00:00Z'
 updatedAt: '2025-02-16T09:00:00Z'
 ---
 
-<link-preview url="https://tally.so/r/3jGqZa" title="커피챗 신청하기" target="_blank">
+<link-preview url="https://www.latpeed.com/products/rSNlW" title="커피챗 신청하기" target="_blank">
 </link-preview>
 
 ## 나는 왜 커피챗을 시작했나
@@ -84,5 +84,5 @@ updatedAt: '2025-02-16T09:00:00Z'
 
 앞으로도 커피챗을 계속할 것이다. 더 많은 개발자들과 만나고, 더 다양한 이야기를 나누고 싶다. 그들의 고민에 귀 기울이고, 내 경험을 나누며, 함께 성장해나가고 싶다. 누군가에게는 위로가 되고, 누군가에게는 동기부여가 되며, 또 누군가에게는 구체적인 방향을 제시해줄 수 있는 사람이 되고 싶다.
 
-<link-preview url="https://tally.so/r/3jGqZa" title="커피챗 신청하기" target="_blank">
+<link-preview url="https://www.latpeed.com/products/rSNlW" title="커피챗 신청하기" target="_blank">
 </link-preview>
